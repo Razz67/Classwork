@@ -1,3 +1,5 @@
+// ************** Arrays **************
+
 // let learners = ["Chris", "Sami", "Aranjyothi"];
 // let shifted = learners.shift[0];
 
@@ -5,7 +7,7 @@
 
 
 
-// Spread Operator
+// **************** Spread Operator **************
 
 // let learners = ["kristy", "Nathan", "Sami"];
 // let otherLearners = ["Sponge Bob", "Super Man", "Bugs Bunny"];
@@ -27,7 +29,7 @@
   // expected output: 6
 
 
-//  Rest Parameters
+//  ************** Rest Parameters **************
 // function add(...numbers) {
 //     console.log(numbers);
 // for (let i = 0; i < numbers.length; i++) {
@@ -52,8 +54,9 @@
 //   console.log(sum(1, 2, 3, 4));
 //   // expected output: 10
 
-
-//create function maxOfTwoNumbers with two parameters return the largest of two numbers if they are equal return the that number
+// ******************************** Classwork *************************************
+// ************** Exercise 1 **************
+// **create function maxOfTwoNumbers with two parameters return the largest of two numbers if they are equal return the that number
 // function maxOfTwoNumbers(x, y) {
 //     if (x > y) {
 //         return x;
@@ -63,8 +66,10 @@
 // }
 // console.log(maxOfTwoNumbers(10, 25));
 
-// a function expression name maxOfThree takes three arguments return the  largest
-// function maxOfThree(x, y, z) {
+
+// Exercise 2
+// **a function expression name maxOfThree takes three arguments return the  largest
+// const  maxOfThree = function(x, y, z) {
 //     if (x > y && x > z) {
 //         return x;
 //     } else if (y > x && y > z) {
@@ -74,7 +79,9 @@
 //     }
 // console.log(maxOfThree(10, 25, 30));
 
-// function isCharAVowel takes one argument and returns true if it is a vowel and false if it is a vowel
+// ************** Exercise 3 **************
+// **function isCharAVowel takes one argument and returns true if it is a vowel and false if it is a vowel
+
 // function isCharAVowel(char) {
 //     if (char === "a" || char === "e" || char === "i" || char === "o" || char === "u") {
 //         return true;
@@ -85,8 +92,11 @@
 // console.log(isCharAVowel("a"));
 // console.log(isCharAVowel("b"));
 
-// function sumArray takes an array of numbers and returns the sum of all the numbers in the array
-// function sumArray(numbers) {
+
+// ************** Exercise 4 **************
+// **function sumArray takes an array of numbers and returns the sum of all the numbers in the array
+
+// const sumArray = function(numbers) {
 //     let sum = 0;
 //     for (let i = 0; i < numbers.length; i++) {
 //         sum += numbers[i];
@@ -95,7 +105,8 @@
 // }
 // console.log(sumArray([1, 2, 3, 4, 5]));
 
-//function multiplyArray takes an array of numbers and returns the product of all the numbers in the array
+// ************** Exercise 5 ***************
+//**function multiplyArray takes an array of numbers and returns the product of all the numbers in the array
 // function multiplyArray(numbers) {
 //     let product = 1;
 //     for (let i = 0; i < numbers.length; i++) {
@@ -105,13 +116,16 @@
 // }
 // console.log(multiplyArray([1, 2, 3, 4, 5]));
 
-// Exercise 6
+// ************** Exercise 6 **************
+// **Function expression numArgs; returns the number of args passed to the function
 // const numArgs = function(...args) {
 //   return args.length;
 // }
 // console.log(numArgs(1, 2, 3, 4, 5))
 
-// Exercise 7
+// *************** Exercise 7 **************
+// ** Function reversString takes a string as an argument, 
+// ** reverses the chars and returns it
 
 // function reverseString(str) {
 //   let reversedStr = "";
@@ -122,8 +136,9 @@
 // }
 // console.log(reverseString("Sponge Bob"));
 
-// Exercise 8
-//Function expression longestStringArray that takes an array of string of strings as an argument returns the length of the longest string
+// *************** Exercise 8 **************
+// **Function expression longestStringArray takes an array of strings as an argument 
+// **returns the length of the longest string
 
 // const longestStringArray = (...strings) => {
 //   let longStr = "";
@@ -136,6 +151,10 @@
 // }
 // console.log(longestStringArray("The", "Dallas", "Cowboys"));
 
+
+// ************** Exercise 9 **************
+// ** Function stringsLongerThan, takes an array of strings  and a number as arguments
+// **returns an array of the strings that are longer than the number passed
 // function stringsLongerThan(strings, num) {
 //   let longStr = [];
 //   for (let index = 0; index < strings.length; index++) {
