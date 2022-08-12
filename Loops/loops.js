@@ -41,16 +41,11 @@
 // }
 
 // Exercise 4
-
 // let text = "";
 // for (let index = 0; index < 7; index++) {
 //     console.log(text += "#");
 // }
 
-// for (let index = 0; index < 10; index++) {
-//     const element = array[index];
-
-// }
 
 //  Exercise 5
 // print prime numbers between 1 and 20
@@ -83,7 +78,7 @@
 // Exercise 2
 //while loop multiples of 5 between 1 and 100
 // let index = 1;
-// while (index <= 100) {
+// while (index < 100) {
 //     if (index % 5 === 0) {
 //         console.log(index);
 //     }
@@ -94,13 +89,10 @@
 // While loop print integers between 0 and 20/ numbers divisible by 2 multiplied by 3 and 5
 // let index = 0;
 // let times3 = 0;
-// let times5 = 0;
 // while (index <= 20) {
 //     if (index % 2 === 0) {
 //         times3 = index * 3;
-//         times5 = index * 5;
 //         console.log(times3);
-//         console.log(times5);
 // }
 //     index++;
 // }
@@ -109,7 +101,7 @@
 // print all prime numbers between 0 and 20
 // let index = 0;
 // while (index <= 20) {
-//     if (index % 2 != 0) {
+//     if (index % 3 === 0) {
 //         console.log(index);
 //     }
 //     index++;
@@ -125,23 +117,21 @@
 //     quarters++;
 //     change -= 0.25;
 // }
-
 // console.log(quarters);
 
 // Exercise 6 Bonus
 //output 10, 30, 50, 70, 90, 20, 40, 60, 80, 100
-let index = 10;
-while (index <= 100) {
-    if (index % 10 === 0) {
-        console.log(index);
-        if (index % 10 === 0) {
-            console.log(index);
-        }
-    }
-    index += 20;
-}
 
-
+// let index = 10;
+// while ( index <= 100)
+// console.log(index);
+//       if (index === 10 && index < 91) {
+//         console.log(index += 20);
+//       } else if (index >= 90) {
+//         console.log(index += 20);
+//       }
+//       index++;
+    
 
 // Exercise 7 Bonus
 // while loop that prints numbers from 500 to 800 if divisible by 4
@@ -152,3 +142,36 @@ while (index <= 100) {
 //     }
 //     index++;
 // }
+
+// Class exercise
+/** Create two nested for loops - one for each output.
+ * Afterwards, try rewriting as nested while loops.
+ * 
+ * OUTPUT 1:
+ * 
+ * 1
+ * 123
+ * 1234
+ * 12345
+ * 
+ * OUTPUT 2:
+ * 
+ * 55555
+ * 4444
+ * 333
+ * 22
+ * 1
+ */
+
+// Challenge 1 {For Loop}
+
+// for (let i = 1; i <= 3 ; i++) {
+//     let str = "";
+//     for (let j = 1; j <= i; j++) {
+//         str += j;
+//     }
+//     console.log(str);
+// }
+
+// Challenge 1 {While Loop}
+
