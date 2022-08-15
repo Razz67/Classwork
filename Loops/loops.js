@@ -173,5 +173,24 @@
 //     console.log(str);
 // }
 
-// Challenge 1 {While Loop}
+// fizzBuzz function {While Loop}
+let index = 1;  
+while (index <= 100) {
+    if (index % 3 === 0 && index % 5 === 0) {
+        console.log("FizzBuzz");
+    } else if (index % 3 === 0) {
+        console.log("Fizz");
+    } else if (index % 5 === 0) {
+        console.log("Buzz");
+    } else {
+        console.log(index);
+    }
+    index++;
+}
+console.log(index);
 
+
+// FizzBuzz Terenary
+// for (let i = 0; i < 100;) {
+//    console.log((++i % 3 ? "" : "Fizz") + (i % 5 ? "" : "buzz") || i); 
+// }
