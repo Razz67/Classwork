@@ -76,7 +76,6 @@ let radio = {
   //change station randomly
     changeStation: function () {
         let randomStation = Math.floor(Math.random() * radio.stations.length);
-        console.log(radio.stations[randomStation].name);
 
 
         let randomSong = Math.floor(Math.random() * radio.stations[randomStation].songs.length);
