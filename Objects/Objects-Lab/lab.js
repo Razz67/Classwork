@@ -75,11 +75,11 @@ let radio = {
 
   //change station randomly
     changeStation: function () {
-        let randomStation = Math.floor(Math.random() * this.stations.length);
-        console.log(this.stations[randomStation].name);
-        let randomSong = Math.floor(Math.random() * this.stations[randomStation].songs.length);
-        console.log(this.stations[randomStation].songs[randomSong].title);
-        console.log(this.stations[randomStation].songs[randomSong].artist);
+        let randomStation = Math.floor(Math.random() * radio.stations.length);
+        console.log(radio.stations[randomStation].name);
+        let randomSong = Math.floor(Math.random() * radio.stations[randomStation].songs.length);
+        console.log(radio.stations[randomStation].songs[randomSong].title);
+        console.log(radio.stations[randomStation].songs[randomSong].artist);
     }
 }
 
