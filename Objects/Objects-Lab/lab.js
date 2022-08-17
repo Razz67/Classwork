@@ -77,7 +77,12 @@ const radio = {
     changeStation: function () {
         let randomStation = Math.floor(Math.random() * radio.stations.length);
         let randomSong = Math.floor(Math.random() * radio.stations[randomStation].songs.length);
-        console.log("Now Playing: " + radio.stations[randomStation].songs[randomSong].title + " by " + radio.stations[randomStation].songs[randomSong].artist + " on the " + radio.stations[randomStation].name + " station!");
+
+        console.log(
+          "Now Playing: " + radio.stations[randomStation].songs[randomSong].title + 
+        " by " + radio.stations[randomStation].songs[randomSong].artist + " on the " + 
+        radio.stations[randomStation].name + " station!"
+        );
     }
 }
 
