@@ -1,21 +1,19 @@
 // function takes a string as an argument and returns an object that keeps track of how many times each letter occurs in the string.
-// ex:
-// countLetters("hello") // { h: 1, e: 1, l: 2, o: 1 }  // note: case matters   // note: spaces count as a character
-// countLetters("") // {}
 
-// function countLetters(str) {
-//   var obj = {};
-//   for (var i = 0; i < str.length; i++) {
-//     var char = str[i];
-//     if (obj[char]) {
-//       obj[char]++;
-//     } else {
-//       obj[char] = 1;
-//     }
-//   }
-//   return obj;
-// }
-// console.log(countLetters("hello"));
+
+function countLetters(str) {
+  const obj = {};
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (obj[char]) {  // if previous key is the same current key, return that key and add 1 to its value if not just add the key and 1 to the value
+      obj[char]++;
+    } else {
+      obj[char] = 1;
+    }
+  }
+  return obj;
+}
+console.log(countLetters("hello all"));
 
 
 // plaid shirt for $27.83 paid with $100.00 cashier return an object with each denomination of change as a key and the number of that denomination as the value.

@@ -18,7 +18,7 @@ Create a method on your radio object that changes the station randomly (research
 When the station is changed, pick a song from that station. Example: console.log("Now Playing:" + song.title + "by" + song.artist)
 */
 
-let radio = {
+const radio = {
   stations: [
     {
       name: "Soul",
@@ -76,8 +76,6 @@ let radio = {
   //change station randomly
     changeStation: function () {
         let randomStation = Math.floor(Math.random() * radio.stations.length);
-
-
         let randomSong = Math.floor(Math.random() * radio.stations[randomStation].songs.length);
         console.log("Now Playing: " + radio.stations[randomStation].songs[randomSong].title + " by " + radio.stations[randomStation].songs[randomSong].artist + " on the " + radio.stations[randomStation].name + " station!");
     }
