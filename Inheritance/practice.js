@@ -15,7 +15,7 @@
 // 		this.eyeColor = eyeColor;
 // 	}
 
-    // toString()
+// toString()
 //sras}
 
 // class PostalWorker extends Person {
@@ -48,10 +48,26 @@
 // chef1.cooks();
 // postalWorker1.walks();
 
-class BankAccount {
-	constructor(ownerName, balance, acctNum) {
-		this.ownerName = ownerName;
-		this.balance = balance;
-		this.acctNum = acctNum;
-	}
-}
+
+// given a string oe words, return the length of the shortest word(s)
+// function findShortest(s) {
+// 	let arr = s.split(' ');
+// 	let shortest = arr[0].length;
+// 	for (let i = 0; i < arr.length; i++) {
+// 		if (arr[i].length < shortest) {
+// 			shortest = arr[i].length;
+// 		}
+// 	}
+// 	return shortest;
+// }
+// console.log(findShortest("The quick brown fox jumped over the lazy dog"), 3);
+
+// given a string made up of letters a, b, and c. switch the positions of the letters a and b. leave c where it is.
+// function switchPos(s) {
+// 	let arr = s.split('');
+// 	let temp = arr[0];
+// 	arr[0] = arr[1];
+// 	arr[1] = temp;
+// 	return arr.join('');
+// }
+// console.log(switchPos("abc"));

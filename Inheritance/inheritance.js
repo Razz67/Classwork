@@ -1,5 +1,6 @@
 // Lab
 
+//Part 1
 // class Governer {
 //     static staticProperty = "I am honest";
 //     static  staticMethod() {
@@ -10,6 +11,9 @@
 // console.log(Governer.staticProperty);
 // console.log(Governer.staticMethod());
 
+
+// Part 2
+
 // class Person {
 // 	constructor(name, age, eyeColor) {
 // 		this.name = name;
@@ -17,8 +21,6 @@
 // 		this.eyeColor = eyeColor;
 // 	}
 
-    // toString()
-//sras}
 
 // class PostalWorker extends Person {
 // 	walks() {
@@ -50,44 +52,66 @@
 // chef1.cooks();
 // postalWorker1.walks();
 
+// Part 3
 class BankAccount {
 	constructor(ownerName, balance, acctNum) {
 		this.ownerName = ownerName;
 		this.balance = balance;
 		this.acctNum = acctNum;
 	}
-	deposit(amount) {
-		this.balance += amount;
+	deposit(depositAmt) {
+		this.balance += depositAmt;
+		console.log(
+			"After your deposit of " +
+				depositAmt +
+				" your balance is: " +
+				this.balance
+		);
 	}
-	withdraw(amount) {
-		this.balance -= amount;
+	withdraw(withdrawAmt) {
+		this.balance -= withdrawAmt;
+		console.log(
+			"After your withdrawl of " +
+				withdrawAmt +
+				" your balance is: " +
+				this.balance
+		);
 	}
 }
 
-class CheckingAccount extends BankAccount {
-	constructor(ownerName, balance, acctNum) {
-		super(ownerName, balance, acctNum);
+class checkingAccount extends BankAccount {
+	constructor(ownerName, balance, acctNum, overdraftEnabled = true) {
+		super(ownerName, balance, acctNum); //calls the constructor of the parent class(BankAccount)
+		this.overdraftEnabled = overdraftEnabled;
 	}
-	withdraw(amount) {
-		this.balance -= amount;
-	}
-	overdraftEnabled() {
-		if (this.balance < 0) {
-			return true;
+	withdraw(withdrawAmt) {
+		if (this.overdraftEnabled && withdrawAmt > this.balance) {
+			console.log("You are overdrafting");
+			super.withdraw(withdrawAmt);
 		} else {
-			return false;
+			this.balance -= withdrawAmt;
+			console.log(
+				"You withdrew " + withdrawAmt + " your balance is: " + this.balance
+			);
 		}
 	}
 }
 
-class SavingsAccount extends BankAccount {
-	constructor(ownerName, balance, acctNum) {
-		super(ownerName, balance, acctNum);
-	}
-	withdraw() {
-		console.log("You can't withdraw from a savings account");
+class savingsAccount extends BankAccount {
+	constructor(ownerName, balance, acctNum, overdraftEnabled = false) {
+		super(ownerName, balance, acctNum); //calls the constructor of the parent class(BankAccount)
+		this.overdraftEnabled = overdraftEnabled;
 	}
 }
-BankAccount.balance = 1000
-BankAccount.deposit(100);
-console.log(BankAccount.balance);
+
+const razzAccnt = new BankAccount("Razz", 1000, "12345");
+
+const razzChecking = new checkingAccount("Razz", 1000, "12345");
+
+const razzSavings = new savingsAccount("Razz", 1000, "12345");
+
+console.log(razzAccnt);
+console.log(razzChecking);
+console.log(razzSavings);
+razzAccnt.deposit(100000);
+razzAccnt.withdraw(1000);
