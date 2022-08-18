@@ -71,3 +71,9 @@
 // 	return arr.join('');
 // }
 // console.log(switchPos("abc"));
+
+
+
+function switcheroo(x) {
+	
+}
