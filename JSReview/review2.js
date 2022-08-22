@@ -13,8 +13,7 @@ for (let i = 0; i <= 200; i++) {
     }
 }
 
-//  fizzbuzz for loop exercise
-
+//  fizzbuzz
 const fizzbuzz = function(num) {
     for (let i = 1; i <= num; i++) {
         if (i % 3 === 0 && i % 5 === 0) {
