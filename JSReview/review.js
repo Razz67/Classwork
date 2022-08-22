@@ -423,23 +423,17 @@ let cat2 = {
     breed: "Mixed"
 }
 
-// 3. Combine the two cats into one object
-// const combineCats = (mama, papa) => {
-//     console.log(mama);
-//     console.log(papa);
-// }
-// console.log(combineCats(cat1, cat2));
 
-// combine the two cats into an object
+// 3. combine the two cats into an object
 const combineCats = (mama, papa) => {
-    cat1.age = 0;
-    cat2.age = 1;
-    return {
+    let twoCats =  {
+         age: 1,   
         name: mama.name + papa.name,
-        age: mama.age + papa.age,
         breed: mama.breed +  '-' + papa.breed
-    }
+    };
+    return twoCats;
 }
+console.log(cat1, cat2);
 
 // 4. Cat brain bender
 console.log(combineCats(combineCats(cat1, cat2), combineCats(combineCats(cat1, cat2), combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2), combineCats(cat1, cat2), combineCats(cat1, cat2), combineCats(cat1, cat2)))));
