@@ -44,18 +44,22 @@
 // console.log(wolfy);
 
 // Yell at the Ninja Turtles
-const favMovies = ["Jaws", "The Fellowship of the Ring", "Howl's Moving Castle", "Django Unchained", "Titanic"];
-console.log(favMovies.indexOf("Titanic")); // returns 4 because it is the 4th item in the array
-favMovies.sort(); // alphabetical sort
-favMovies.pop(); // removes last item in array and returns it
-favMovies.reverse(); // reverse the order of the array
-favMovies.shift(); // removes first element
-favMovies.unshift("The Matrix");  // add to the beginning of the array
-favMovies.splice(3, 1, "Avatar"); // add to the middle of the array
-let favMoviesSliced = favMovies.slice(2, 4); // returns the 3rd and 4th element of the array. Doesn't change the original array.
-console.log(favMovies.indexOf("Fast and Furious")); // returns -1 because it is not in the array   
+const turtle = ["Donatello", "Raphael", "Leonardo", "Michaelangelo"];
+for (let i = 0; i < turtle.length; i++) {
+    console.log(turtle[i].toUpperCase());
+}
 
+// Methods revisited
+// const favMovies = ["Jaws", "The Fellowship of the Ring", "Howl's Moving Castle", "Django Unchained", "Titanic"];
+// console.log(favMovies.indexOf("Titanic")); // returns 4 because it is the 4th item in the array
+// favMovies.sort(); // alphabetical sort
+// favMovies.pop(); // removes last item in array and returns it
+// favMovies.reverse(); // reverse the order of the array
+// favMovies.shift(); // removes first element
+// favMovies.unshift("The Matrix");  // add to the beginning of the array
+// favMovies.splice(3, 1, "Avatar"); // add to the middle of the array
+// let favMoviesSliced = favMovies.slice(2, 4); // returns the 3rd and 4th element of the array. Doesn't change the original array.
+// console.log(favMovies.indexOf("Fast and Furious")); // returns -1 because it is not in the array   
 
-
-console.log(favMoviesSliced);
-console.log(favMovies);
+// console.log(favMoviesSliced);
+// console.log(favMovies);
