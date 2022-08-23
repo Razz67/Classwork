@@ -222,7 +222,7 @@ A. Q&A
 // }
 // console.log(answer);
 
-// H What's in Your Closet
+// ********** H What's in Your Closet **********
 
 // const kristynsCloset = [
 //     "left shoe",
