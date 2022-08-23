@@ -44,10 +44,10 @@
 // console.log(wolfy);
 
 // Yell at the Ninja Turtles
-const turtle = ["Donatello", "Raphael", "Leonardo", "Michaelangelo"];
-for (let i = 0; i < turtle.length; i++) {
-    console.log(turtle[i].toUpperCase());
-}
+// const turtle = ["Donatello", "Raphael", "Leonardo", "Michaelangelo"];
+// for (let i = 0; i < turtle.length; i++) {
+//     console.log(turtle[i].toUpperCase());
+// }
 
 // Methods revisited
 // const favMovies = ["Jaws", "The Fellowship of the Ring", "Howl's Moving Castle", "Django Unchained", "Titanic"];
@@ -63,3 +63,16 @@ for (let i = 0; i < turtle.length; i++) {
 
 // console.log(favMoviesSliced);
 // console.log(favMovies);
+
+// Where is Waldo?
+// const whereIsWaldo = [
+//                         ["Timmy", "Frank"], 
+//                     "Eggbert",
+//                         ["Lucinda", "Jacc", "Neff", "Snoop"],
+//                         ["Petunia", ["Baked Goods", "Waldo"]]];
+
+//                         let removeEggbert = whereIsWaldo.splice([1], 1);
+//                         whereIsWaldo[2][2] = "No One"; // changes the 3rd element of the 2nd array to "No One"
+//                         console.log(whereIsWaldo[2][1][1]); // returns "Waldo"
+//                         console.log(removeEggbert);
+
