@@ -166,29 +166,39 @@ const thomsCloset = [
 // ********** Return of the closets ***********
 
 // Alien Attire
-let kristynsShoe = kristynsCloset[0];
-console.log(thomsCloset[2].push(kristynsShoe));
-console.log(thomsCloset);
+// let kristynsShoe = kristynsCloset[0];
+// console.log(thomsCloset[2].push(kristynsShoe));
+// console.log(thomsCloset);
 
 // Dress Us up
-console.log(
-	`Thom is looking fierce in ${thomsCloset[0][0]}, ${thomsCloset[1][1]} and ${thomsCloset[2][2]}.`
-);
+// console.log(
+// 	`Thom is looking fierce in ${thomsCloset[0][0]}, ${thomsCloset[1][1]} and ${thomsCloset[2][2]}.`
+// );
 
-console.log(
-	`Thom is looking fierce in ${thomsCloset[0][1]}, ${thomsCloset[1][0]} and ${thomsCloset[2][1]}.`
-);
-console.log(
-	`Thom is looking fierce in ${thomsCloset[0][2]}, ${thomsCloset[1][2]} and ${thomsCloset[2][0]}.`
-);
+// console.log(
+// 	`Thom is looking fierce in ${thomsCloset[0][1]}, ${thomsCloset[1][0]} and ${thomsCloset[2][1]}.`
+// );
+// console.log(
+// 	`Thom is looking fierce in ${thomsCloset[0][2]}, ${thomsCloset[1][2]} and ${thomsCloset[2][0]}.`
+// );
 
-console.log(
-	`Kristyn is looking fierce in ${kristynsCloset[4]}, ${kristynsCloset[3]} and ${kristynsCloset[5]}.`
-);
+// console.log(
+// 	`Kristyn is looking fierce in ${kristynsCloset[4]}, ${kristynsCloset[3]} and ${kristynsCloset[5]}.`
+// );
 
-console.log(
-	`Kristyn is looking fierce in ${kristynsCloset[6]}, ${kristynsCloset[0]} and ${kristynsCloset[2]}.`
-);
-console.log(
-	`Kristyn is looking fierce in ${kristynsCloset[2]}, ${kristynsCloset[1]} and ${kristynsCloset[0]}.`
-);
+// console.log(
+// 	`Kristyn is looking fierce in ${kristynsCloset[6]}, ${kristynsCloset[0]} and ${kristynsCloset[2]}.`
+// );
+// console.log(
+// 	`Kristyn is looking fierce in ${kristynsCloset[2]}, ${kristynsCloset[1]} and ${kristynsCloset[0]}.`
+// );
+
+// Dirty Laundry
+// kristynsCloset.forEach(element => {
+//     console.log("WHIRR: now washing " + element);
+// });
+
+// Inventory
+thomsCloset.forEach(element => {
+    console.log(element);
+});
