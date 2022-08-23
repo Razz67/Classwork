@@ -76,3 +76,15 @@
 //                         console.log(whereIsWaldo[2][1][1]); // returns "Waldo"
 //                         console.log(removeEggbert);
 
+// Excited Kitten
+let str = "";
+let randomString = "Why does the red dot always get away...";
+for (let i = 1; i <= 20; i++) {
+    if (str.length % 2 === 0) {
+        str += Math.floor(Math.random(randomString) * randomString);
+    } else {
+    str += "Love me, pet me! HSSSSSS!\n";
+}
+}
+console.log(str);
+
