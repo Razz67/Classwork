@@ -3,7 +3,7 @@
 // Part II JavaScript Reps
 // Easy Going
 // for (let i = 0; i <= 20; i++) {
-//     console.log(i);  
+//     console.log(i);
 // }
 
 // // Get Even
@@ -28,7 +28,6 @@
 //     }
 //     }
 //     fizzbuzz(30);
-
 
 // Wild Wild Life
 // const wolfy = ["Wolfy", "Wolf", 16, "Yukon Territory"];
@@ -59,14 +58,14 @@
 // favMovies.unshift("The Matrix");  // add to the beginning of the array
 // favMovies.splice(3, 1, "Avatar"); // add to the middle of the array
 // let favMoviesSliced = favMovies.slice(2, 4); // returns the 3rd and 4th element of the array. Doesn't change the original array.
-// console.log(favMovies.indexOf("Fast and Furious")); // returns -1 because it is not in the array   
+// console.log(favMovies.indexOf("Fast and Furious")); // returns -1 because it is not in the array
 
 // console.log(favMoviesSliced);
 // console.log(favMovies);
 
 // Where is Waldo?
 // const whereIsWaldo = [
-//                         ["Timmy", "Frank"], 
+//                         ["Timmy", "Frank"],
 //                     "Eggbert",
 //                         ["Lucinda", "Jacc", "Neff", "Snoop"],
 //                         ["Petunia", ["Baked Goods", "Waldo"]]];
@@ -77,14 +76,35 @@
 //                         console.log(removeEggbert);
 
 // Excited Kitten
-let str = "";
-let randomString = "Why does the red dot always get away...";
-for (let i = 1; i <= 20; i++) {
-    if (str.length % 2 === 0) {
-        str += Math.floor(Math.random(randomString) * randomString);
-    } else {
-    str += "Love me, pet me! HSSSSSS!\n";
-}
-}
-console.log(str);
+// let qoutes = [
+// 	" ...human...why are you taking pictures of me?",
+// 	" ...the catnip made me do it",
+// 	" ...why does the red dot always get away?",
+// ];
+
+// let randomQoute = Math.floor(Math.random() * qoutes.length);
+
+// for (let i = 0; i < 20; i++) {
+// 	if (i % 2 === 0) {
+// 		console.log(qoutes[randomQoute]);
+// 	} else {
+//         	console.log("love me , pet me! hssssss!");
+//     }
+// }
+
+// const middle = (arr) => {
+//     const mid = Math.floor(arr.length / 2);
+//     nums = [...arr].sort((a, b) => a - b);
+//     return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+// };
+// console.log(middle([1, 2, 3, 4 ,5, 6, 7 ,8, 9, 10, 11]))
+
+// const nums = [
+// 	14, 11, 16, 15, 13, 16, 15, 17, 19, 11, 12, 14, 19, 11, 15, 17, 11, 18, 12,
+// 	17, 12, 71, 18, 15, 12,
+// ];
+
+// nums.sort();
+// middleIndex = Math.floor(nums.length / 2);
+// console.log(nums[middleIndex]);
 
