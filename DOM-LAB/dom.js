@@ -28,6 +28,8 @@ let menuLinks = [
 	},
 ];
 
+let linkObj = {menuLinks};
+
 // 5.1.1 Set showingSubMenu to false
 let showingSubMenu = false;
 
@@ -82,13 +84,44 @@ let topMenuLinks = topMenuEl.querySelectorAll("a");
 
 // 5.2 Attach a delegated event listener to topMenuEl
 topMenuEl.addEventListener("click", (event) => {
+	// 5.2.1 call preventDefault on event
+	event.preventDefault();
 
-// 5.2.1 call preventDefault on event
-event.preventDefault();
+	// 5.2.2 If event target is not an a tag, return
+	if (event.target.tagName !== "A") return;
 
-// 5.2.2 If event target is not an a tag, return
-if (event.target.tagName !== "A") return;
+	// 5.2.3 console log event target
+	console.log(event.target.text);
 
-// 5.2.3 console log event target
-console.log(event.target);
+	// 5.3.1 if clicked link has class "active" romove it
+	if (event.target.classList.contains("active")) {
+		event.target.classList.remove("active");
+
+		// 5.3.2 Set showingSubMenu to false
+		showingSubMenu = false;
+
+		// 5.3.3 Set subMenuEl top property to top 0
+		subMenuEl.style.top = "0";
+	}
+
+	// 5.4 Remove class "active" from all a tags in topMenuLinks
+	for (const link of topMenuLinks) {
+		link.classList.remove("active");
+	}
+
+	// 5.5 Add class "active" to topMenuLink that was clicked
+	event.target.classList.add("active");
+
+	// 5.6 set showingSubMenu to true if the clicked a elements link object within menuLinks has a subLinks property except for the link object for the about link
+	if (event.target.text !== "about") {
+		showingSubMenu = true;
+	} else {
+		showingSubMenu = false;
+	}
+	
+
+	// 5.3.4 return
+	return;
+
+	//
 });
