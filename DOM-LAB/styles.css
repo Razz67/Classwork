@@ -9,7 +9,7 @@ body {
     height: 100vh;
     display: grid;
     grid-template-rows: 3rem auto;
-    color: black;
+    color: #fff;
 }
 
 /* CSS Custom Properties */
