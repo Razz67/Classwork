@@ -331,6 +331,8 @@ A. Q&A
 // }
 // printLongestWord("Chocolate", "Banana", "Onions", "Tangerines");
 
+
+
 // ***** Objects *****
 
 // A. Make a user object
@@ -342,8 +344,8 @@ const user = {
 };
 
 // B. Update the user
-user.email = 'someoneelse@perscholas.com'; // (1)
-user.age++;  // (2)
+user["email"] = 'someoneelse@perscholas.com'; // (1) accessing user email using bracket notation
+user.age++;  // (2)                           // Access user age using dot notation  
 
 // C. Adding keys and values
 user.location = "some-or-other location";
@@ -433,9 +435,9 @@ const combineCats = (mama, papa) => {
     };
     return twoCats;
 }
-console.log(cat1, cat2);
+console.log(combineCats(cat1, cat2));
 
 // 4. Cat brain bender
-console.log(combineCats(combineCats(cat1, cat2), combineCats(combineCats(cat1, cat2), combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2), combineCats(cat1, cat2), combineCats(cat1, cat2), combineCats(cat1, cat2)))));
-
-
+console.log(
+	combineCats(combineCats(cat1, cat2), (combineCats(cat1, cat2), combineCats(combineCats(cat1, cat2),
+			(combineCats(cat1, cat2), combineCats(cat1, cat2))))));

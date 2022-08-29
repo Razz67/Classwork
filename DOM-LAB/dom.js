@@ -28,6 +28,8 @@ let menuLinks = [
 	},
 ];
 
+/* ************************************** Selecting and styling the <main> section ***********************/
+
 // 1.0 Creat a variable name mainEl and set it to the element with the id of main
 let mainEl = document.querySelector("main");
 
@@ -40,6 +42,8 @@ mainEl.innerHTML = "<h1>SEI Rocks!</h1>";
 // 1.3 add flex-ctr class to mainEl
 mainEl.classList.add("flex-ctr");
 
+/* ****************************** Selecting and styling the top-menu id in the nav section ***********************/
+
 // 2.0 Create a variable called topMenuEl and set it to the top-menu element
 let topMenuEl = document.getElementById("top-menu");
 
@@ -51,6 +55,8 @@ topMenuEl.style.backgroundColor = "var(--top-menu-bg)";
 
 // 2.3 add class "flex-around" to topMenuEl
 topMenuEl.classList.add("flex-around");
+
+/* ************************** Traversing through menuLinks, adding href corresponding to link text ***********************/
 
 // 3.1 Iterate over menuLinks array
 menuLinks.forEach((element) => {
@@ -67,7 +73,9 @@ menuLinks.forEach((element) => {
 
 // ********** Start Part 2 **********
 
-// 4.0 Assing sub-menu to subMenuEl
+/* ************************** Building and styling the subMenu ***********************/
+
+// 4.0 Assign sub-menu to subMenuEl
 let subMenuEl = document.getElementById("sub-menu");
 
 // 4.1 Set height of subMenuEl to 100%
@@ -85,8 +93,10 @@ subMenuEl.style.position = "absolute";
 // 4.5 Set sumMenuEl top property to top 0
 subMenuEl.style.top = 0;
 
-// 5.1 Select all a tags in topMenuEl and assign to topMenuLinks
+// 5.1 Select all <a> tags in topMenuEl and assign to topMenuLinks
 let topMenuLinks = topMenuEl.querySelectorAll("a");
+
+/* ************************** Hiding the subMenu and adding event listener to topMenuLinks **********************	*/
 
 // Set showingSubMenu to false
 let showingSubMenu = false;
@@ -106,7 +116,7 @@ function handleClick(event) {
 	// 5.2.3 console log event target
 	console.log(event.target.text);
 
-	// 5.3.1 if clicked link has class "active" romove it
+	// 5.3.1 if clicked link has class "active" remove it
 	if (event.target.classList.contains("active")) {
 		event.target.classList.remove("active");
 
@@ -127,9 +137,9 @@ function handleClick(event) {
 	event.target.classList.add("active");
 
 	// 5.6 set showingSubMenu to true if the clicked a elements link object within menuLinks has a subLinks property except for the link object for the about link
-	const aName = event.target.textContent;
+	const linkName = event.target.textContent;
 	const menuLink = menuLinks.find((link) => {
-		return link.text === aName;
+		return link.text === linkName;
 	});
 
 	if (menuLink.subLinks) {
@@ -138,6 +148,8 @@ function handleClick(event) {
 		showingSubMenu = false;
 	}
 
+	/* ****************************** Build subMenu ************************************/
+	
 	// 5.7 if showingSubMenu is true, call buildSubMenu function passing it to the subLinks array of the clicked a elements
 	if (showingSubMenu) {
 		buildSubMenu(menuLink.subLinks);
@@ -149,7 +161,7 @@ function handleClick(event) {
 	}
 
 	// 6.4  Change h1 to about when about link is clicked. had to put this here because it was not working anywhere else
-	if (aName === "about") {
+	if (linkFiname === "about") {
 		mainEl.innerHTML = "<h1>about</h1>";
 	}
 }
@@ -186,9 +198,8 @@ subMenuEl.addEventListener("click", (event) => {
 	}
 
 	// 6.0/3 console log event target
-	console.log(event.target.textContent);
+	// console.log(event.target.textContent);
 
-	// 6.1
 	// 6.1.1 Set showingSubMenu to false
 	showingSubMenu = false;
 
@@ -200,6 +211,6 @@ subMenuEl.addEventListener("click", (event) => {
 		topMenuLinks[i].classList.remove("active");
 	}
 
-	// 6.3 update mainEl to the content of the a element inside h1
+	// 6.3 update mainEl h1 content to the content of the <a> (that was clicked)
 	mainEl.innerHTML = `<h1>${event.target.textContent}</h1>`;
 });
