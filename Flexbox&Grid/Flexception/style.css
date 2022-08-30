@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.outerBox {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    background-color: purple;
+    min-height: 250px;
+    width: 250px;
+}
+
+.midBox {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background-color: black;
+    height: 55px;
+    width: 55px;
+}
+
+.innerBox {
+    margin: 5px;
+    justify-content: center;
+    background-color: white;
+    height: 8px;
+    width: 8px;
+}

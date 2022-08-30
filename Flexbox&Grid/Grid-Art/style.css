@@ -1,0 +1,52 @@
+body {
+    background: lightslategray;
+}
+
+.container {
+    width: 300px;
+    margin: 20px auto;
+    height: 300px;
+    display: grid;
+    grid-gap: 4px;
+    grid-template-rows: 100px 100px 1fr 1fr;
+    grid-template-columns: 80px 1fr 30px;
+}
+
+.item {
+    background: #F3F3F3;
+}
+
+.one {
+    grid-row: 1;
+    grid-column: 1;
+    background-color: white;
+}
+
+.two {
+    background-color: red;
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.three {
+    background-color: white;
+}
+
+.four {
+    background-color: blue;
+    grid-row: span 2;
+}
+
+.five {
+    grid-row: span 2;
+    background-color: white;
+}
+
+.six {
+    background-color: white;
+}
+
+.seven {
+    background-color: yellow;
+    grid-column: 3;
+}
