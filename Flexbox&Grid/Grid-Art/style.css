@@ -1,5 +1,5 @@
 body {
-    background: lightslategray;
+    background: black;
 }
 
 .container {
@@ -14,6 +14,7 @@ body {
 
 .item {
     background: #F3F3F3;
+    font-size: 0;
 }
 
 .one {
