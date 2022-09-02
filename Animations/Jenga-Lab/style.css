@@ -1,0 +1,129 @@
+.container {
+    display: grid;
+    grid-template-columns: 250px 140px 1fr;
+    grid-template-rows: 1fr 1fr 3fr 3fr;
+}
+
+body {
+    background: #00136c;
+    display: grid;
+    grid-template: repeat(3, auto);
+}
+
+/* =============== Section 1 ================ */
+
+.section1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.redBox {
+    background: #ff0000;
+    width: 75px;
+    height: 75px;
+}
+
+.blueBox {
+    background: #0000ff;
+    width: 75px;
+    height: 75px;
+}
+
+.text1 {
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+/* ================= Section 2 ================ */
+
+.section2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+.text2 {
+    position: absolute;
+    margin-top: 35px;
+    color: #fff;
+    z-index: -1;
+}
+
+
+/* ====================== section 2 ==================== */
+
+
+
+
+
+
+.origin {
+    width: 1em;
+   height: 1em;
+    font-size: 50px;
+    animation: rotate-90 6s cubic-bezier(0.8, 0, 0.2, 1);
+}
+  /* ---------------------------------- */
+
+.origin1 {
+     width: 1em; 
+   height: 1em;
+    font-size: 50px;
+    animation: rotate90 6s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+
+@keyframes rotate-90 {
+  50% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+@keyframes rotate90 {
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+.red {
+    background: red;
+    transform-origin: top left;
+}
+
+.yellow {
+    background: yellow;
+    transform-origin: top right
+}
+
+.blue {
+    background: blue;
+    transform-origin: bottom left
+}
+
+.green {
+    background: green;
+    transform-origin: bottom right
+}
+
+
+
+
+
+
