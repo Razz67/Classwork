@@ -1,10 +1,10 @@
 function query(events) {
 	// use this variable to store the value of the current borough (as a string)
-	// EXAMPLE: let borough = "BRONX"
+	// EXAMPLE: let borough = borough field of the complaints object
 	let borough = events.target.id;
 
 	// use this variable to store the number of results the user requested (as a string or number)
-	// EXAMPLE: let numOfResults = 5
+	// EXAMPLE: let numOfResults = the input in the input field if it is empty show 10 results
 	let numOfResults = document.getElementById("input-box").value;
 	if (numOfResults === "") {
 		numOfResults = 10;
@@ -22,6 +22,7 @@ function query(events) {
 }
 
 // you'll do most of your DOM Manipulation in this function
+// Add click event listener to all buttons
 document.getElementById("brooklyn").addEventListener("click", query);
 document.getElementById("manhattan").addEventListener("click", query);
 document.getElementById("queens").addEventListener("click", query);
@@ -29,9 +30,10 @@ document.getElementById("statenIsland").addEventListener("click", query);
 document.getElementById("bronx").addEventListener("click", query);
 
 function showResults(complaints) {
+    // Start with empty divs
         document.getElementById("div1").innerHTML = "";
         document.getElementById("div2").innerHTML = "";
-
+// Populate div1 with complaint description and div2 with resolution description
         for (let i = 0; i < complaints.length; i++) {
         document.getElementById("div1").innerHTML += `<p>${complaints[i].descriptor}</p>`;        
         document.getElementById("div2").innerHTML += `<details> <summary> POLICE RESPONSE </summary> ${complaints[i].resolution_description} </details>`;

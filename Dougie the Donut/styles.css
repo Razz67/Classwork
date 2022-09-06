@@ -12,9 +12,18 @@ form {
     display: inline-block;
 }
 
+#input-box {
+    height: 40px;
+}
+
+#input-box:hover {
+    border: 2px solid red;
+}
+
 button {
     padding: 5px;
     width: 200px;
+    min-height: 50px;
     background-color: darkgreen;
     color: bisque;
     font-weight: 800;
@@ -41,3 +50,35 @@ section {
     display: flex;
     gap: 20px;
 }
+
+summary {
+    height: 40px;
+    background-color: brown;
+    margin-bottom: 26px;
+    margin-left: 300px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+p::before {
+    content: "**";
+    color: red;
+    font-size: 30px;
+
+}
+
+p {
+    height: 40px;
+    width: 200px;
+    margin-bottom: 26px;
+    padding: 5px;
+    text-align: center;
+    outline: 2px solid black;
+    font-weight: bold;
+
+}
+
+/* details {
+    font-size: 1.5rem;
+}
+ */
