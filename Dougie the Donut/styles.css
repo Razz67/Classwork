@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: chartreuse;
+}
+
+form {
+    display: inline-block;
+}
+
+button {
+    padding: 5px;
+    width: 200px;
+    background-color: darkgreen;
+    color: bisque;
+    font-weight: 800;
+}
+
+button:hover {
+    background-color:dodgerblue;
+}
+
+.hidden {
+    display: none;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section {
+    display: flex;
+    gap: 20px;
+}
