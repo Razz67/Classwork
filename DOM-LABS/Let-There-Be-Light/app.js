@@ -1,30 +1,41 @@
-// if light is on, turn it off
-// let lightOn = true;
-// function toggle() {
-// 	if (lightOn) {
-// 		document.getElementById("img").src =
-// 			"https://toppng.com/uploads/preview/light-bulb-on-off-png-11553940208oq66nq8jew.png";
-// 		document.getElementById("btn").innerHTML = "TURN ON";
-// 		lightOn = false;
-// 		img.style.background = "black";
-// 	} else {
-// 		document.getElementById("img").src =
-// 			"https://toppng.com/uploads/preview/light-bulb-png-transparent-light-bulb-115628766421gdl0skp2k.png";
-// 		document.getElementById("btn").innerHTML = "TURN OFF";
-// 		img.style.background = "yellow";
-// 		lightOn = true;
-// 	}
-// }
+	
+	
 
+
+	// function toggle() {
+	// 	let image = document.querySelector("#img");
+	// 	if (image.src.match("images/bulb-on.png")) {
+	// 		image.src = "images/bulb-off.png";
+	// 		document.getElementById("btn").value = "TURN ON";
+	// 		document.body.style.background = "#000";
+	// 		document.getElementById("btn").style.backgroundColor = "grey";
+	// 	} 
+	// 	else {
+	// 		image.src = "images/bulb-on.png";
+	// 		document.getElementById("btn").value = "TURN OFF";
+	// 		document.querySelector("#btn").style.backgroundColor = "chartreuse";
+	// 		document.body.style.background = "#FFF";
+	// 	}
+	// }
+
+	
 
 	function toggle() {
-		let image = document.getElementById("img");
-		if (image.src.match("images/bulb-on.png")) {
-			image.src = "images/bulb-off.png";
-		} else {
-			image.src = "images/bulb-on.png";
+		let img = document.querySelector("#img");
+		let currentImg = 1;
+		let indicator = document.getElementById("indicator");
+
+		if (img.src.match("images/bulb-on.png")) {
+			img.src="images/bulb-off.png";
+			indicator.classList.remove("on");
+			document.body.style.backgroundColor = "chartreuse";
+
 		}
+		else {
+			indicator.classList.add("on");
+			img.src = "images/bulb-on.png";
+			document.body.style.backgroundColor = "#000";
+		}
+		
 	}
-// let img = document.getElementById("img");
-// let btn = document.getElementById("btn");
-// btn.addEventListener("click", toggle); 
+

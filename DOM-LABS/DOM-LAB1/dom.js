@@ -65,6 +65,8 @@ menuLinks.forEach((element) => {
 
 	// 3.3 Add an href attribute to the a tag and set it to the href property of the element
 	links.setAttribute("href", element.href);
+
+	// 3.4 Set the new <a> elements content to the value of the text property of the link object
 	links.textContent = element.text;
 
 	// 3.4 Append the new tag to the top-menu element

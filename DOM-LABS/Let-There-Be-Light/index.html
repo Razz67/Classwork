@@ -5,18 +5,26 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
+		<script
+			defer
+			src="https://kit.fontawesome.com/892b961a05.js"
+			crossorigin="anonymous"
+		></script>
 		<script defer src="app.js"></script>
 		<title>Let There Light</title>
 	</head>
 	<body>
 		<div class="flex-container">
-			<img
-				id="img"
-				class="myImg"
-				src="images/bulb-off.png"
-				alt="Bulb"
-			/>
-			<input type="button" id="btn" onclick="toggle()" value="Turn ON" />
+			<img id="img" class="myImg" src="images/bulb-off.png" alt="Bulb" />
+
+			<!-- Regular Input Button -->
+			<!-- <input type="button" id="btn" onclick="toggle()" value="TURN ON" />
+			<br /> -->
+
+			<!-- Power On Button Section -->
+				<section>
+			<a id="button" onclick="toggle()">&#xf011</a>				<span id="indicator"></span>
+			</section>
 		</div>
 	</body>
 </html>
