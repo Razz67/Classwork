@@ -1,14 +1,16 @@
 // Load express
 const express = require('express')
 
-// Bring in our packaged routes
-const fruitRoutes = require('./routes/fruitRoutes')
+// Identify our port
+const port = 3000
 
 // Creates our express app (object)
 const app = express()
 
-// Identify our port
-const port = 3000
+// Bring in our packaged routes
+const fruitRoutes = require('./routes/fruitRoutes')
+
+
 
 // Middleware
 app.use('/api/fruits', fruitRoutes)

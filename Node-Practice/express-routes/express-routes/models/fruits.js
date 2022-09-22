@@ -1,5 +1,4 @@
 // Setup data
-
 const fruits = [
     {
         name:'apple',
@@ -17,19 +16,5 @@ const fruits = [
         readyToEat: true
     }
 ];
-
-/*
-PUT REQUEST
-    {
-        name:'banana',
-        color: 'yellow',
-        readyToEat: true
-    }
-
-PATCH REQUEST
-    {
-        readyToEat: true
-    }
-*/
 
 module.exports = fruits

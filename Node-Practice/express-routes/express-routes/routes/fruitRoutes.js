@@ -8,9 +8,32 @@ const router = express.Router()
 const fruits = require('../models/fruits')
 
 // Setup "index" route
-router.get('/', (req, res) => {  
-    res.send(fruits)
-})
+// Use queries to filter data
+router.get("/", (req, res) => {
+	// Get the query string
+	const query = req.query;
+	// Filter the data
+	const filteredFruits = fruits.filter((fruit) => {
+		let matchesQuery = true;
+		// Loop through the query object
+		for (const key in query) {
+			// Check if the fruit has the property
+			if (fruit[key]) {
+				// Check if the fruit property matches the query
+				if (fruit[key] === query[key]) {
+					matchesQuery = true;
+				}
+			} else {
+				matchesQuery = false;
+			}
+		}
+		// Return the fruit if it matches the query
+		return matchesQuery;
+	});
+	// Send the filtered data back to the client
+	res.send(filteredFruits);
+});
+
 
 // Setup "new" route
 router.get('/new', (req, res) => {     
@@ -42,4 +65,4 @@ router.delete('/:index', (req, res) => {
     res.send('Deleting a fruit at index! (in DB)')
 })
 
-module.exports = router
+module.exports = router;
