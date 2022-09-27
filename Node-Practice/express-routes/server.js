@@ -11,6 +11,9 @@ const app = express()
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
+// Middleware
+app.use(express.urlencoded({extended:false}))
+
 
 
 // Bring in our packaged routes
@@ -18,15 +21,9 @@ const fruitRoutes = require('./routes/fruitRoute')
 const meatRoutes = require('./routes/meatRoute')
 const vegetableRoutes = require('./routes/vegetableRoute')
 
-
-
-// Middleware
-app.use(express.urlencoded({extended:false}))
-app.use('/fruits', fruitRoutes)
-app.use('/meats', meatRoutes)
-app.use('/vegetables', vegetableRoutes)
-
-
+app.use("/fruits", fruitRoutes);
+app.use("/meats", meatRoutes);
+app.use("/vegetables", vegetableRoutes);
 
 // Listen to port
 app.listen(port, () => {

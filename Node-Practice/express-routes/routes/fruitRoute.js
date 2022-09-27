@@ -7,13 +7,14 @@ const router = express.Router()
 
 // INDUCES
 // index, New, Delete, Update, Create, Edit, Show
+
 // Load our fruits data
 const fruits = require('../models/fruits')
 
 // Setup "index" route
 router.get("/", (req, res) => {
 	// res.send("fruits")
-	res.render('Index', {fruits: fruits})
+	res.render('fruits/Index', {fruits: fruits})
 });
 
 
@@ -46,7 +47,7 @@ router.get("/", (req, res) => {
 
 
 // Setup "new" route
-router.get('/new', (req, res) => {     
+router.get('fruits/new', (req, res) => {     
     // res.send('<form>Create fruit</form>')
 	res.render('New')
 })
