@@ -2,7 +2,8 @@
 const express = require('express')
 
 // Identify our port
-const port = 3000
+const port = process.env.PORT || 3000;
+require("dotenv").config()
 
 // Creates our express app (object)
 const app = express()
@@ -11,19 +12,20 @@ const app = express()
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
+
 // Middleware
 app.use(express.urlencoded({extended:false}))
-
-
+app.use(express.static("public"))
+app.use("/fruits", fruitRoutes);
+app.use("/meats", meatRoutes);
+app.use("/vegetables", vegetableRoutes);
 
 // Bring in our packaged routes
 const fruitRoutes = require('./routes/fruitRoute')
 const meatRoutes = require('./routes/meatRoute')
 const vegetableRoutes = require('./routes/vegetableRoute')
 
-app.use("/fruits", fruitRoutes);
-app.use("/meats", meatRoutes);
-app.use("/vegetables", vegetableRoutes);
+
 
 // Listen to port
 app.listen(port, () => {

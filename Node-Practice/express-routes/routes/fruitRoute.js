@@ -49,7 +49,7 @@ router.get("/", (req, res) => {
 // Setup "new" route
 router.get('fruits/new', (req, res) => {     
     // res.send('<form>Create fruit</form>')
-	res.render('New')
+	res.render('fruits/New')
 })
 
 // Setup "delete" route
@@ -83,8 +83,8 @@ router.get('/:index/edit', (req, res) => {
 
 // Setup "show" route  
 router.get('/:index', (req, res) => {
-	// res.send(fruit[req.params.index]);
-    res.render("Show", {fruits: fruits[req.params.index]});
+	// res.send(fruits[req.params.index]);
+    res.render("/fruits/Show", {fruits: fruits[req.params.index]});
 })
 
 // Export the router
