@@ -12,7 +12,7 @@ class Index extends React.Component {
 						return (
 							<li key={i}>
 								The <a href={`/meats/${i}`}></a>
-								{meats.name} is {meats.color}
+								{meats.name} is {meats.type}
 							</li>
 						);
 					})}

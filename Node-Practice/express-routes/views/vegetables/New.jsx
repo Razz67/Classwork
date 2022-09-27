@@ -1,27 +1,23 @@
 const React = require("react");
+const DefaultLayout = require("../layouts/DefaultLayout");
 
 class New extends React.Component {
 	render() {
 		return (
-			<div>
-				<h1>Create New Fruit</h1>
-				<form action="/fruits" method="POST">
-
+			<DefaultLayout title="Create new vegetable" foodGroup="vegetables">
+				<h1>Create New Vegetable</h1>
+				<form action="/vegetables" method="POST">
 					<label htmlFor="name">Name: </label>
 					<input type="text" name="name" />
 					<br />
 
-					<label htmlFor="color">Color: </label>
-					<input type="text" name="color" />
+					<label htmlFor="type">Type: </label>
+					<input type="text" name="type" />
 					<br />
-
-					<label htmlFor="readyToEat">Ready to Eat: </label>
-					<input type="checkbox" name="readyToEat" />
-					<br />
-                    <input type="submit" name="" value="Create Fruit" />
+					
+					<input type="submit" name="" value="Create Meat" />
 				</form>
-				<nav><a href=""></a>create new fruit</nav>
-			</div>
+			</DefaultLayout>
 		);
 	}
 }

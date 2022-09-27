@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 const fruitSchema = new Schema({
     name: {type: String, required: true},
     color: {type: String, required: true},
-    readyToEat: boolean
+    readyToEat: Boolean
 });
 
 // Create a Model from our Schema
