@@ -1,91 +1,82 @@
 // Load express
-const express = require('express')
+const express = require("express");
 
 // Create a special router object for our routes
-const router = express.Router()
+const router = express.Router();
 
+// Loading our Model of fruit
+const Fruit = require("../models/fruit");
 
-// INDUCES
-// index, New, Delete, Update, Create, Edit, Show
-
-// Load our fruits data
-const fruits = require('../models/fruits')
+// I.N.D.U.C.E.S
+// Index, New, Delete, Update, Create, Edit, Show
 
 // Setup "index" route
 router.get("/", (req, res) => {
-	// res.send("fruits")
-	res.render('fruits/Index', {fruits: fruits})
+	// Find takes two arguments:
+	//   1st: an object with our query (to filter our data and find exactly what we need)
+	//   2nd: callback (with an error object and the found data)
+	Fruit.find({}, (err, foundFruit) => {
+		if (err) {
+			res.status(400).json(err);
+		} else {
+			res.status(200).render("fruits/Index", { fruit: foundFruit });
+		}
+	});
 });
 
-
-
-// Use queries to filter data
-// router.get("/", (req, res) => {
-// 	// Get the query string
-// 	const query = req.query;
-// 	// Filter the data
-// 	const filteredFruits = fruits.filter((fruit) => {
-// 		let matchesQuery = true;
-// 		// Loop through the query object
-// 		for (const key in query) {
-// 			// Check if the fruit has the property
-// 			if (fruit[key]) {
-// 				// Check if the fruit property matches the query
-// 				if (fruit[key] === query[key]) {
-// 					matchesQuery = true;
-// 				}
-// 			} else {
-// 				matchesQuery = false;
-// 			}
-// 		}
-// 		// Return the fruit if it matches the query
-// 		return matchesQuery;
-// 	});
-// 	// Send the filtered data back to the client
-// 	res.send(filteredFruits);
-// });
-
-
 // Setup "new" route
-router.get('fruits/new', (req, res) => {     
-    // res.send('<form>Create fruit</form>')
-	res.render('fruits/New')
-})
-
-// Setup "delete" route
-router.delete('/:index/delete', (req, res) => {
-    res.send('Deleting a fruit at index! (in DB)')
-})
-
-// Setup "update" route
-router.put('/:index', (req, res) => {
-    res.send('Updating a fruit at index! (in DB)')
-})
-
+router.get("/new", (req, res) => {
+	res.render("fruits/New");
+});
 
 // Setup "create" route
-router.post('/', (req, res) => {
-    console.log(req.body)
-    if (req.body.readyToEat === "on") {
-        req.body.readyToEat = true
-    } else {
-        req.body.readyToEat = false
-    }
-    fruits.push(req.body)
-    res.redirect("/fruits");
-    // res.send('Creating a new fruit! (in DB)')
-})
+router.post("/", (req, res) => {
+	if (req.body.readyToEat === "on") {
+		req.body.readyToEat = true;
+	} else {
+		req.body.readyToEat = false;
+	}
+
+	// Create has two arguments:
+	//   1st: the data we want to send
+	//   2nd: callback function
+	Fruit.create(req.body, (err, createdFruit) => {
+		if (err) {
+			res.status(400).json(err);
+		} else {
+			res.status(200).redirect("fruits/Show", {fruit: createdFruit});
+		}
+	});
+
+});
+
+// Setup "show" route
+router.get("/:id", (req, res) => {
+    // findById requires two arguments
+    // 1. the id of the document in our database
+    // 2. callbak (with err object and found document)
+    Fruit.findById(req.params.id, (err, foundFruit) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).render("Fruits/Show", {fruit: foundFruit})
+        }
+    })
+});
 
 // Setup "edit" route
-router.get('/:index/edit', (req, res) => {
-    res.send('<form>Edit fruit</form>')
-})
+router.get("/:index/edit", (req, res) => {
+	res.send("<form>Edit fruit</form>");
+});
 
-// Setup "show" route  
-router.get('/:index', (req, res) => {
-	// res.send(fruits[req.params.index]);
-    res.render("/fruits/Show", {fruits: fruits[req.params.index]});
-})
+// Setup "update" route
+router.put("/:index", (req, res) => {
+	res.send("Updating a fruit at index! (in DB)");
+});
 
-// Export the router
+// Setup "destroy" route
+router.delete("/:index", (req, res) => {
+	res.send("Deleting a fruit at index! (in DB)");
+});
+
 module.exports = router;

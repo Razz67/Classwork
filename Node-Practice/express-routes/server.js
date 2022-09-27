@@ -4,6 +4,8 @@ const mongoose = require("mongoose")
 
 // Identify our port
 const port = process.env.PORT || 3000;
+
+// .env config
 require("dotenv").config();
 
 // Creates our express app (object)

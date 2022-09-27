@@ -1,20 +1,20 @@
 const React = require("react");
 const DefaultLayout = require("../layouts/DefaultLayout");
 
-
-// Class Component
+// class component
 class Show extends React.Component {
 	render() {
-		// Object destructuring
-		const { name, color, readyToEat } = this.props.fruits;
+		const { name, color, readyToEat } = this.props.fruit;
 
 		return (
-			<DefaultLayout title={`${name} details`} foodGroup={"fruits"}>
+			<DefaultLayout title={`${name} details`} foodGroup="fruits">
 				<h1>Show Page</h1>
 				<p>
 					The {name} is {color}.
 				</p>
-				<p>{readyToEat ? "It's Ready to eat" : "It is not ready to eat"}</p>
+				<p>
+					{readyToEat ? "It is ready to eat!" : "It is NOT readt to eat... :("}
+				</p>
 				<nav>
 					<a href="/fruits">Back</a>
 				</nav>
