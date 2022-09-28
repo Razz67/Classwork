@@ -45,9 +45,8 @@ const seedStarterData = (req, res) => {
 	Fruit.deleteMany({}, (err, deletedFruits) => {
 		if (err) {
 			res.status(400).json(err);
+			console.log(deletedFruits);
 		} else {
-			console.log("deleted data.");
-			console.log(seed.fruits);
 			// Data has been successfully deleted
 			// Now use seed data to repopulate the database
 			Fruit.create(seed.fruits, (err, createdFruit) => {
@@ -60,6 +59,19 @@ const seedStarterData = (req, res) => {
 		}
 	});
 };
+
+// // ROUTE       GET /fruits/seed      (seed)
+const clearData = (req, res) => {
+// Delete all remaining documents (if there are any)
+Fruit.deleteMany({}, (err, deletedFruits) => {
+	if (err) {
+		res.status(400).json(err);
+		console.log(deletedFruits);
+	} else {
+		res.status(200).redirect("/fruits");
+	}
+});
+}
 
 // ROUTE     GET /fruits/:id     (show)
 const showOneFruit = (req, res) => {

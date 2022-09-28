@@ -42,7 +42,7 @@ router.delete("/:id", deleteMeat);
 router.put("/:id", updateMeat);
 
 // Setup "create" route
-router.post("/:id", createdMeat);
+router.post("/", createdMeat);
 
 // Setup "edit" route
 router.get("/:id/edit", showEditView);
