@@ -11,11 +11,11 @@ class New extends React.Component {
 					<input type="text" name="name" />
 					<br />
 
-					<label htmlFor="type">Type: </label>
-					<input type="text" name="type" />
+					<label htmlFor="type">Color: </label>
+					<input type="text" name="color" />
 					<br />
 					
-					<input type="submit" name="" value="Create Meat" />
+					<input type="submit" name="" value="Create Veggie" />
 				</form>
 			</DefaultLayout>
 		);

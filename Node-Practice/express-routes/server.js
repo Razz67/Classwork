@@ -1,43 +1,38 @@
-// Load express & mongoosDB
-const express = require('express');
-const mongoose = require("mongoose");
+// Load express
+const express = require("express");
 const methodOverride = require("method-override");
 
+// Bring in mongoConfig function
+const mongoConfig = require("./config");
 
 // Bring in our packaged routes
-const fruitRoutes = require('./routes/fruitRoutes');
-const meatRoutes = require('./routes/meatRoutes');
-const vegetableRoutes = require('./routes/vegetableRoutes');
+const fruitRoutes = require("./routes/fruitRoutes");
+const meatRoutes = require("./routes/meatRoutes");
+const vegetableRoutes = require("./routes/vegetableRoutes");
 
-// .env config
 require("dotenv").config();
 
 // Creates our express app (object)
 const app = express();
 
-// Identify our PORT
+// Identify our port
 const port = process.env.PORT;
 
-// set up our view engine
-app.set('view engine', 'jsx');
-app.engine('jsx', require('express-react-views').createEngine());
+// setup our view engine
+app.set("view engine", "jsx");
+app.engine("jsx", require("express-react-views").createEngine());
 
 // Middleware
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
+app.use(express.json());
 app.use("/fruits", fruitRoutes);
 app.use("/meats", meatRoutes);
 app.use("/vegetables", vegetableRoutes);
 
-// Mongoose
-mongoose.connect(process.env.MONGO_DB);
-mongoose.connection.once("open", () => {
-    console.log("Connected to MongoDb");
-})
+// Listen to port
+app.listen(port, () => console.log("Listening on port: ", port));
 
-// Listen to PORT
-app.listen(port, () => {
-    console.log('Listening on PORT: ', port)
-})
-
+// Connect to DB
+mongoConfig();

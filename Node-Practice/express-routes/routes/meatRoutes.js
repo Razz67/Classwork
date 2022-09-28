@@ -5,74 +5,52 @@ const express = require("express");
 const router = express.Router();
 
 // Loading our Model of fruit
-const Meat = require("../models/meat");
+const Fruit = require("../models/meat");
+
+// Bring in seed data
+const seed = require("../models/seed");
+
+// Bring in controller functions (destructure methods)
+const {
+	findAllMeats,
+	showNewView,
+	createdMeat,
+	seedStarterData,
+	showMeat,
+	showEditView,
+	updateMeat,
+	deleteMeat,
+} = require("../controllers/meatController");
+
+// Bring in controller object (with methods attached)
+// const meatController = require('../controllers/meatController')
+// Example: router.get('/', meatController.findAllMeats)
 
 // I.N.D.U.C.E.S
 // Index, New, Delete, Update, Create, Edit, Show
 
 // Setup "index" route
-router.get("/", (req, res) => {
-	// Find takes two arguments:
-	//   1st: an object with our query (to filter our data and find exactly what we need)
-	//   2nd: callback (with an error object and the found data)
-
-	Meat.find({}, (err, foundMeat) => {
-		if (err) {
-			res.status(400).json(err);
-		} else {
-			res.status(200).render("meats/Index", { meats: foundMeat });
-		}
-	});
-});
+router.get("/", findAllMeats);
 
 // Setup "new" route
-router.get("/new", (req, res) => {
-	res.render("meats/New");
-});
-
-// Setup "create" route
-router.post('/', (req, res) => {
-
-    // Create has two arguments:
-    //   1st: the data we want to send
-    //   2nd: callback function 
-    Meat.create(req.body, (err, createdMeat) => {
-        if (err) {
-            res.status(400).json(err)
-        } else {
-            res.status(200).redirect('/meats')
-        }
-    })
-
-})
-
-// Setup "show" route
-router.get("/:id", (req, res) => {
-	// findById requires two arguments
-	// 1. the id of the document in our database
-	// 2. callbak (with err object and found document)
-	Meat.findById(req.params.id, (err, foundMeat) => {
-		if (err) {
-			res.status(400).json(err);
-		} else {
-			res.status(200).render("meats/Show", { meats: foundMeat });
-		}
-	});
-});
-
-// Setup "edit" route
-router.get("/:index/edit", (req, res) => {
-	res.send("<form>Edit meat</form>");
-});
-
-// Setup "update" route
-router.put("/:index", (req, res) => {
-	res.send("Updating a meat at index! (in DB)");
-});
+router.get("/new", showNewView);
 
 // Setup "destroy" route
-router.delete("/:index", (req, res) => {
-	res.send("Deleting a meat at index! (in DB)");
-});
+router.delete("/:id", deleteMeat);
+
+// Setup "update" route
+router.put("/:id", updateMeat);
+
+// Setup "create" route
+router.post("/:id", createdMeat);
+
+// Setup "edit" route
+router.get("/:id/edit", showEditView);
+
+// Setup "show" route
+router.get("/:id", showMeat);
+
+// Setup "seed" route
+router.get("/seed", seedStarterData);
 
 module.exports = router;
