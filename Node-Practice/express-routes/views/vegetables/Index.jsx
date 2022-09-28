@@ -3,23 +3,22 @@ const DefaultLayout = require("../layouts/DefaultLayout");
 
 class Index extends React.Component {
 	render() {
-		// Object Destructuring
-		const { vegetable } = this.props;
+		const { vegetables } = this.props;
 		return (
 			<DefaultLayout>
 				<h1>Vegetable Index</h1>
 				<ul>
-					{vegetable.map((vegetable) => {
+					{vegetables.map((vegetable) => {
 						return (
-							<li key={meats._id}>
-								The <a href={`/vegetable/${vegetable_id}`}></a>
+							<li key={vegetable._id}>
+								The <a href={`/vegetables/${vegetable._id}`}></a>
 								{vegetable.name} is {vegetable.color}
 							</li>
 						);
 					})}
 				</ul>
 				<nav>
-					<a href="vegetable/new">create new Veggie</a>
+					<a href="/vegetables/new">create new Veggie</a>
 				</nav>
 			</DefaultLayout>
 		);

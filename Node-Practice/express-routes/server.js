@@ -21,15 +21,13 @@ const port = process.env.PORT;
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
-
-
-
 // Middleware
 app.use(express.urlencoded({extended:false}))
 app.use(express.static("public"))
 app.use("/fruits", fruitRoutes);
 app.use("/meats", meatRoutes);
 app.use("/vegetables", vegetableRoutes);
+// Mongoose
 mongoose.connect(process.env.MONGO_DB);
 mongoose.connection.once("open", () => {
     console.log("Connected to MongoDb");

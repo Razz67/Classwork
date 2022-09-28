@@ -8,16 +8,16 @@ class Index extends React.Component {
 			<div>
 				<h1>Meats Index Page</h1>
 				<ul>
-					{meats.map((meats, i) => {
+					{meats.map((meat) => {
 						return (
-							<li key={i}>
-								The <a href={`/meats/${i}`}></a>
-								{meats.name} is {meats.type}
+							<li key={meats._id}>
+								The <a href={`/meats/${meat._id}`}></a>
+								{meat.name} is made from {meat.type}
 							</li>
 						);
 					})}
 				</ul>
-				<a href="meats/new">create new fruit</a>
+				<a href="meats/New">create new Meat</a>
 			</div>
 		);
 	}

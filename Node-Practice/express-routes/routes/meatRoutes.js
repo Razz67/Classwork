@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
 		if (err) {
 			res.status(400).json(err);
 		} else {
-			res.status(200).render("meats/Index", { meat: foundMeat });
+			res.status(200).render("meats/Index", { meats: foundMeat });
 		}
 	});
 });
@@ -44,8 +44,6 @@ router.post('/', (req, res) => {
         }
     })
 
-    // fruits.push(req.body)
-    // res.redirect('/fruits')
 })
 
 // Setup "show" route
@@ -57,7 +55,7 @@ router.get("/:id", (req, res) => {
 		if (err) {
 			res.status(400).json(err);
 		} else {
-			res.status(200).render("fruits/Show", { meat: foundMeat });
+			res.status(200).render("meats/Show", { meats: foundMeat });
 		}
 	});
 });

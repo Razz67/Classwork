@@ -8,12 +8,12 @@ class Show extends React.Component {
 
 		return (
 			<DefaultLayout title={`${name} details`} foodGroup="fruits">
-				<h1>Show Page</h1>
+				<h1>Fruits Show Page</h1>
 				<p>
 					The {name} is {color}.
 				</p>
 				<p>
-					{readyToEat ? "It is ready to eat!" : "It is NOT readt to eat... :("}
+					{readyToEat ? "It is ready to eat!" : "It is NOT ready to eat... :("}
 				</p>
 				<nav>
 					<a href="/fruits">Back</a>

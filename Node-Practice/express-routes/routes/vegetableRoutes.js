@@ -16,11 +16,11 @@ router.get("/", (req, res) => {
 	//   1st: an object with our query (to filter our data and find exactly what we need)
 	//   2nd: callback (with an error object and the found data)
 
-	Meat.find({}, (err, foundVegetable) => {
+	Vegetable.find({}, (err, foundVegetable) => {
 		if (err) {
 			res.status(400).json(err);
 		} else {
-			res.status(200).render("vegetable/Index", { vegetable: foundVegetable });
+			res.status(200).render("vegetables/Index", { vegetable: foundVegetable });
 		}
 	});
 });
@@ -62,7 +62,7 @@ router.get("/:id", (req, res) => {
 		if (err) {
 			res.status(400).json(err);
 		} else {
-			res.status(200).render("meats/Show", { vegetable: foundVegetable });
+			res.status(200).render("vegetables/Show", { vegetable: foundVegetable });
 		}
 	});
 });

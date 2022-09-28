@@ -15,48 +15,53 @@ router.get("/", (req, res) => {
 	// Find takes two arguments:
 	//   1st: an object with our query (to filter our data and find exactly what we need)
 	//   2nd: callback (with an error object and the found data)
-
 	Fruit.find({}, (err, foundFruit) => {
 		if (err) {
 			res.status(400).json(err);
 		} else {
-			res.status(200).render("fruits/Index", { fruit: foundFruit });
+			res.status(200).render("fruits/Index", { fruits: foundFruit });
 		}
 	});
+
+	//res.render('fruits/Index', { fruits: fruits })
 });
 
 // Setup "new" route
 router.get("/new", (req, res) => {
+	// res.send('<form>Create fruit</form>')
 	res.render("fruits/New");
 });
 
 // Setup "create" route
-router.post('/', (req, res) => {
-    if (req.body.readyToEat === "on") {
-        req.body.readyToEat = true
-    } else {
-        req.body.readyToEat = false
-    }
+router.post("/", (req, res) => {
+	if (req.body.readyToEat === "on") {
+		req.body.readyToEat = true;
+	} else {
+		req.body.readyToEat = false;
+	}
 
-    // Create has two arguments:
-    //   1st: the data we want to send
-    //   2nd: callback function 
-    Fruit.create(req.body, (err, createdFruit) => {
-        if (err) {
-            res.status(400).json(err)
-        } else {
-            res.status(200).redirect('/fruits')
-        }
-    })
+	// Create has two arguments:
+	//   1st: the data we want to send
+	//   2nd: callback function
+	Fruit.create(req.body, (err, createdFruit) => {
+		if (err) {
+			res.status(400).json(err);
+		} else {
+			res.status(200).redirect("/fruits");
+		}
+	});
 
-    // fruits.push(req.body)
-    // res.redirect('/fruits')
-})
+	// fruits.push(req.body)
+	// res.redirect('/fruits')
+});
+
 // Setup "show" route
 router.get("/:id", (req, res) => {
-	// findById requires two arguments
-	// 1. the id of the document in our database
-	// 2. callbak (with err object and found document)
+	// res.send(fruits[req.params.index])
+
+	// findById accepts two arguments:
+	//   1st: the id of the document in our database
+	//   2nd: callback (with error object and found document)
 	Fruit.findById(req.params.id, (err, foundFruit) => {
 		if (err) {
 			res.status(400).json(err);
@@ -64,6 +69,8 @@ router.get("/:id", (req, res) => {
 			res.status(200).render("fruits/Show", { fruit: foundFruit });
 		}
 	});
+
+	// res.render('fruits/Show', { fruit: fruits[req.params.index] })
 });
 
 // Setup "edit" route
@@ -81,4 +88,4 @@ router.delete("/:index", (req, res) => {
 	res.send("Deleting a fruit at index! (in DB)");
 });
 
-module.exports = router
+module.exports = router;
