@@ -1,12 +1,13 @@
 // Load express & mongoosDB
-const express = require('express')
+const express = require('express');
 const mongoose = require("mongoose");
+const methodOverride = require("method-override");
 
 
 // Bring in our packaged routes
-const fruitRoutes = require('./routes/fruitRoutes')
-const meatRoutes = require('./routes/meatRoutes')
-const vegetableRoutes = require('./routes/vegetableRoutes')
+const fruitRoutes = require('./routes/fruitRoutes');
+const meatRoutes = require('./routes/meatRoutes');
+const vegetableRoutes = require('./routes/vegetableRoutes');
 
 // .env config
 require("dotenv").config();
@@ -22,11 +23,13 @@ app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
 // Middleware
-app.use(express.urlencoded({extended:false}))
-app.use(express.static("public"))
+app.use(express.urlencoded({extended:false}));
+app.use(express.static("public"));
+app.use(methodOverride("_method"));
 app.use("/fruits", fruitRoutes);
 app.use("/meats", meatRoutes);
 app.use("/vegetables", vegetableRoutes);
+
 // Mongoose
 mongoose.connect(process.env.MONGO_DB);
 mongoose.connection.once("open", () => {

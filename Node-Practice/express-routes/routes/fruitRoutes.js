@@ -69,18 +69,47 @@ router.get("/:id", (req, res) => {
 });
 
 // Setup "edit" route
-router.get("/:index/edit", (req, res) => {
-	res.send("<form>Edit fruit</form>");
+router.get("/:_id/edit", (req, res) => {
+	Fruit.findById(req.params._id, (err, foundFruit) =>{
+		if (err) {
+			res.status(400).json(err)
+		} else {
+			res.status(200).redirect("fruits/Edit", { fruit: foundFruit})
+		}
+	})
 });
 
 // Setup "update" route
-router.put("/:index", (req, res) => {
-	res.send("Updating a fruit at index! (in DB)");
+router.put("/:_id", (req, res) => {
+	if (req.body.readyToEat === "on") {
+		req.body.readyToEat = true;
+	} else {
+		req.body.readyToEat = false;
+	}
+
+	// findByIdAndUpdate has 4 args
+	// 1. the id
+	// 2. The new data we want to use to update the new document
+	// 3. (optional) an options object { new: true }
+	// 4. The callback with err object and updatedFruit
+	Fruit.findByIdAndUpdate(req.params.id, req.body, (err, foundFruit) => {
+		if (err) {
+			res.status(400).json(err)
+		} else {
+			res.status(200).redirect(`/fruits/${req.params.id}`);
+		}
+	})
 });
 
-// Setup "destroy" route
-router.delete("/:index", (req, res) => {
-	res.send("Deleting a fruit at index! (in DB)");
+// Setup "delete" route
+router.delete("/:_id", (req, res) => {
+	Fruit.findByIdAndDelete(req.params._id, (err, deletedFruit) => {
+		if (err) {
+			res.status(400).json(err);
+		} else {
+			res.status(200).redirect("/fruits");
+		}
+	})
 });
 
 module.exports = router;
