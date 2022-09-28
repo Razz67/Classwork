@@ -50,9 +50,6 @@ router.post("/", (req, res) => {
 			res.status(200).redirect("/fruits");
 		}
 	});
-
-	// fruits.push(req.body)
-	// res.redirect('/fruits')
 });
 
 // Setup "show" route
@@ -69,8 +66,6 @@ router.get("/:id", (req, res) => {
 			res.status(200).render("fruits/Show", { fruit: foundFruit });
 		}
 	});
-
-	// res.render('fruits/Show', { fruit: fruits[req.params.index] })
 });
 
 // Setup "edit" route

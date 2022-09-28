@@ -32,12 +32,6 @@ router.get("/new", (req, res) => {
 
 // Setup "create" route
 router.post("/", (req, res) => {
-	Meat.create(req.body, (err, createdVegetable) => {
-		if (err) {
-			res.status(400).json(err);
-		} else {
-			res.status(200).redirect("/vegetables");
-		}
 
 		// Create has two arguments:
 		//   1st: the data we want to send
@@ -51,7 +45,6 @@ router.post("/", (req, res) => {
 			}
 		});
 	});
-});
 
 // Setup "show" route
 router.get("/:id", (req, res) => {

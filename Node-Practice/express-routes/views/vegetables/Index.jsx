@@ -5,14 +5,14 @@ class Index extends React.Component {
 	render() {
 		const { vegetables } = this.props;
 		return (
-			<DefaultLayout>
+			<DefaultLayout title="All Veggies" foodGroup="vegetables">
 				<h1>Vegetable Index</h1>
 				<ul>
 					{vegetables.map((vegetable) => {
 						return (
 							<li key={vegetable._id}>
-								The <a href={`/vegetables/${vegetable._id}`}></a>
-								{vegetable.name} is {vegetable.color}
+								The <a href={`/vegetables/${vegetable._id}`}>
+								{vegetable.name}</a> is {" "} {vegetable.color}
 							</li>
 						);
 					})}
