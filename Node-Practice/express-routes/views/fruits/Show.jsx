@@ -5,9 +5,9 @@ class Show extends React.Component {
 	render() {
 		const { fruit } = this.props;
 		return (
-			<DefaultLayout title={`${fruit.name} details`}>
+			<DefaultLayout title={`${fruit.name} details`} foodGroup="fruits">
 				<div className="show-page">
-					<h1> Fruits - Show Route (View) </h1>
+					<h1> Fruits - Show Page</h1>
 					<p>
 						The {fruit.name} is {fruit.color}.
 					</p>
@@ -16,9 +16,7 @@ class Show extends React.Component {
 							? "It is ready to eat!"
 							: "It is NOT ready to eat..."}
 					</p>
-					{fruit.name === "banana" && (
-						<img src="/images/banana.png" alt="banana" />
-					)}
+					
 
 					<button>
 						<a href={`/fruits/${fruit._id}/edit`}>Edit</a>

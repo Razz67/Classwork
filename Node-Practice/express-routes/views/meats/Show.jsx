@@ -5,16 +5,14 @@ const DefaultLayout = require("../layouts/DefaultLayout");
 class Show extends React.Component {
 	render() {
 		const { meat } = this.props;
-
 		return (
-			<DefaultLayout title={`${meat.name} details`} foodGroup="meats">
-				<h1>Show Page</h1>
+			<DefaultLayout title={`${meat.name} details`}foodGroup="meats">
+				<div className="show-page">
+					<h1>Meats - Show Page</h1>
 				<p>
 					The {meat.name} is {meat.type}.
 				</p>
-				<nav>
-					<a href="/meats">Back</a>
-				</nav>
+				
 
 				<button>
 					<a href={`/meats/${meat._id}/edit`}>Edit</a>
@@ -24,6 +22,7 @@ class Show extends React.Component {
 					<input type="submit" value="Delete" />
 				</form>
 				<a href="/meats">Back</a>
+				</div>
 			</DefaultLayout>
 		);
 	}

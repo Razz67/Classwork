@@ -47,10 +47,11 @@ router.post("/", createdMeat);
 // Setup "edit" route
 router.get("/:id/edit", showEditView);
 
+// Setup "seed" route
+router.get("/seed", seedStarterData);
+
 // Setup "show" route
 router.get("/:id", showMeat);
 
-// Setup "seed" route
-router.get("/seed", seedStarterData);
 
 module.exports = router;

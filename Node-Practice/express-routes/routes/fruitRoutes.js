@@ -47,10 +47,11 @@ router.post("/", createNewFruit);
 // Setup "edit" route
 router.get("/:id/edit", showEditView);
 
+// Setup "seed" route
+router.get("/seed", seedStarterData);
+
 // Setup "show" route
 router.get("/:id", showOneFruit);
 
-// Setup "seed" route
-router.post("/seed", seedStarterData);
 
 module.exports = router;

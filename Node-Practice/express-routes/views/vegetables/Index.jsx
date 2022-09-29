@@ -3,10 +3,11 @@ const DefaultLayout = require("../layouts/DefaultLayout");
 
 class Index extends React.Component {
 	render() {
+		// Destructuring Vegetables
 		const { vegetables } = this.props;
 		return (
 			<DefaultLayout title="All Veggies" veggieGroup="vegetables">
-				<h1>Vegetable Index</h1>
+				<h1>Vegetable Index Page</h1>
 				<ul>
 					{vegetables.map((vegetable) => {
 						return (

@@ -10,7 +10,6 @@ const Vegetable = require("../models/vegetable");
 // Bring in seed data
 const seed = require("../models/seed");
 
-
 // Bring in controller functions (destructure methods)
 const {
 	findAllVegetables,
@@ -30,7 +29,6 @@ const {
 // I.N.D.U.C.E.S
 // Index, New, Delete, Update, Create, Edit, Show
 
-
 // Setup "index" route
 router.get("/", findAllVegetables);
 
@@ -49,10 +47,11 @@ router.post("/", createNewVegetable);
 // Setup "edit" route
 router.get("/:id/edit", showEditView);
 
+// Setup "seed" route
+router.get("/seed", seedStarterData);
+
 // Setup "show" route
 router.get("/:id", showVegetable);
 
-// Setup "seed" route
-router.post("/seed", seedStarterData);
 
 module.exports = router;

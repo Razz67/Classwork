@@ -3,6 +3,7 @@ const DefaultLayout = require("../layouts/DefaultLayout");
 
 class Index extends React.Component {
 	render() {
+		// Destructuring  Fruits
 		const { fruits } = this.props;
 		return (
 			<DefaultLayout title="All Fruits" foodGroup="fruits">
@@ -12,7 +13,7 @@ class Index extends React.Component {
 						return (
 							<li key={fruits._id}>
 								The <a href={`/fruits/${fruit._id}`}>
-								{fruit.name}</a> is  {fruit.color}
+								{fruit.name}</a> is{" "} {fruit.color}
 							</li>
 						);
 					})}
