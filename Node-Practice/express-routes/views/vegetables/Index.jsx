@@ -20,7 +20,7 @@ class Index extends React.Component {
 					})}
 				</ul>
 				<nav>
-					<a href="/vegetables/new">create new Veggie</a>
+					<a href="/vegetables/New">create new Veggie</a>
 				</nav>
 			</DefaultLayout>
 		);
