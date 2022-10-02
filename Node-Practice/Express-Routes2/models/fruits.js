@@ -14,6 +14,16 @@ const fruits = [
 		color: "yellow",
 		readyToEat: true,
 	},
+	{
+		name: "grape",
+		color: "purple",
+		readyToEat: false,
+	},
+	{
+		name: "lime",
+		color: "green",
+		readyToEat: true,
+	}
 ];
 
 module.exports = fruits;
