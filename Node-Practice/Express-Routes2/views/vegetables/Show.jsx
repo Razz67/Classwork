@@ -1,7 +1,7 @@
 const React = require("react");
 class Show extends React.Component {
 	render() {
-		const vegetable = this.props;
+		const vegetable = this.props.vegetables;
 		return (
 			<div>
 				<h1>

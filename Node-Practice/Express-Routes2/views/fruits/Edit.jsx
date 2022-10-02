@@ -3,7 +3,7 @@ const DefaultLayout = require("../layouts/DefaultLayout");
 
 class Edit extends React.Component {
 	render() {
-		let { fruit } = this.props;
+		const { fruit } = this.props;
 
 		return (
 			<DefaultLayout title="Edit A Fruit">

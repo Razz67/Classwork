@@ -63,12 +63,12 @@ router.post("/", (req, res) => {
 });
 
 // Edit route
-router.get("/vegetables/:index/edit", (req, res) => {
+router.get("/:index/edit", (req, res) => {
 	res.send("<form>Edit Vegetable</form>");
 });
 
 // Show route
-router.get("/vegetables/:index", (req, res) => {
+router.get("/:index", (req, res) => {
 	res.send({
 		fruit: vegetables[req.params.index], // look inside the views folder for Show.jsx and pass in the html
 	});
