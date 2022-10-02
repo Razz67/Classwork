@@ -12,3 +12,5 @@ const vegetables = [
 		color: "yellow",
 	},
 ];
+
+module.exports = vegetables;

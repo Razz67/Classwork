@@ -3,6 +3,12 @@ const express = require("express");
 // Bring in our fruitRoute package
 const fruitRoutes = require("./routes/fruitRoute");
 
+// Bring in our meatRoute package
+const meatRoutes = require("./routes/meatRoute");
+
+// Bring in our vegetableRoute package
+const vegetableRoutes = require("./routes/vegetableRoute");
+
 // Create our express app
 const app = express();
 
@@ -10,9 +16,9 @@ const app = express();
 const port = 3000;
 
 // Middleware
-app.use("/api/fruits", fruitRoutes);
-// app.use(meatRoutes);
-// app.use(vegetableRoutes);
+app.use("/fruits", fruitRoutes);
+app.use("/meats", meatRoutes);
+app.use("/vegetables", vegetableRoutes);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));

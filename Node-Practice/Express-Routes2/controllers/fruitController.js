@@ -1,4 +1,4 @@
-const Fruit = require("../models/fruit");
+const Fruit = require("../models/fruits");
 
 // ROUTE     GET /fruits    (index)
 const findAllFruits = (req, res) => {

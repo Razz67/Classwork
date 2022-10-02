@@ -10,5 +10,7 @@ const meats = [
 	{
 		name: "chicken",
 		type: "wing",
-	},
+	}
 ];
+
+module.exports = meats;

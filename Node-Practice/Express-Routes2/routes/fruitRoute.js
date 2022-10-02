@@ -61,6 +61,7 @@ router.put("/:index", (req, res) => {
 router.post("/", (req, res) => {
 	res.send("Creating a fruit");
 	
+	
 	// if (req.body.readyToEat === "on" || req.body.readyToEat === "true") {
 	// 	req.body.readyToEat = true;
 	// } else {
@@ -72,12 +73,12 @@ router.post("/", (req, res) => {
 });
 
 // Edit route
-router.get("/fruits/:index/edit", (req, res) => {
+router.get("/:index/edit", (req, res) => {
 	res.send("<form>Edit Fruit</form>");
 });
 
 // Show route
-router.get("/fruits/:index", (req, res) => {
+router.get("/:index", (req, res) => {
 	res.send({fruit: fruits[req.params.index]  // look inside the views folder for Show.jsx and pass in the html
 	});
 });
