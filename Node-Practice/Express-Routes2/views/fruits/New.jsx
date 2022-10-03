@@ -5,18 +5,22 @@ class New extends React.Component {
 		return (
 			<div>
 				<h1>New Fruit Page</h1>
-
+				{/* Action is the route that the form will submit to */}
 				<form action="/fruits" method="POST">
-					<label htmlFor="name">Name: </label>
+
+					<label htmlFor="name">Name:</label>
 					<input type="text" name="name" />
-					<br />
+					<br /><br />
+
 					<label htmlFor="color">Color: </label>
 					<input type="text" name="color" />
-					<br />
+					<br /><br />
+
 					<label htmlFor="readyToEat">Ready to Eat: </label>
 					<input type="checkbox" name="readyToEat" />
-					<br />
-					<input type="submit" name="" value="Create Fruit" />
+					<br /><br />
+
+					<input type="submit" value="Create Fruit" />
 				</form>
 			</div>
 		);

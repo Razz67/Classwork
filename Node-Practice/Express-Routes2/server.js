@@ -15,21 +15,22 @@ const app = express();
 // Identify our port
 const port = 3000;
 
+// Set up view engine
+app.set("view engine", "jsx");
+app.engine("jsx", require("express-react-views").createEngine());
+
+
 // Middleware
+app.use(express.urlencoded({ extended: false }));
+// app.use(express.static("public"));
+
 app.use("/fruits", fruitRoutes);
 app.use("/meats", meatRoutes);
 app.use("/vegetables", vegetableRoutes);
-
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static("public"));
-
-
-// Set up view engine
-// app.set("view engine", "jsx");
-// app.engine("jsx", require("express-react-views").createEngine());
 
 
 
 app.listen(port, () => {
 	console.log("Listening on port", port);
 });
+

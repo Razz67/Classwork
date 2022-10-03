@@ -1,11 +1,14 @@
 // Load express
 const express = require("express");
 
+// Load oour meats data
+const meats = require("../models/meats");
+
 // Create a special router object for our routes
 const router = express.Router();
 
-// Load oour meats data
-const meats = require("../models/meats");
+
+
 
 // Bring in seed data
 // const seed = require("../models/seed");
@@ -29,19 +32,15 @@ const meats = require("../models/meats");
 // I.N.D.U.C.E.S
 // Index, New, Delete, Update, Create, Edit, Show
 
-// Root route
-router.get("/", (req, res) => {
-	res.send(meats);
-});
 
 // Index route
 router.get("/", (req, res) => {
-	res.send(meats);
+	res.render("meats/Index", { meats: meats });
 });
 
 // New route
 router.get("/new", (req, res) => {
-	res.send("<form>New Meat</form>");
+	res.render("meats/New");
 });
 
 // Delete route
@@ -58,8 +57,9 @@ router.put("/:index", (req, res) => {
 
 // Create route
 router.post("/", (req, res) => {
-	res.send("Creating a meat");
-	// res.redirect("/meats");  // send the user to the index page
+	// res.send("Creating a meat");
+	meats.push(req.body);
+	res.redirect("/meats");  // send the user to the index page
 });
 
 // Edit route
@@ -69,8 +69,7 @@ router.get("/:index/edit", (req, res) => {
 
 // Show route
 router.get("/:index", (req, res) => {
-	res.send({meat: meats[req.params.index], // look inside the views folder for Show.jsx and pass in the html
-});
+	res.render("meats/Show", {meat: meats[req.params.index]}) // look inside the views folder for Show.jsx and pass in the html
 });
 
 // Setup "index" route

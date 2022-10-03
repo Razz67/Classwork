@@ -7,11 +7,10 @@ class Index extends React.Component {
 			<div>
 				<h1>Meats Index Page</h1>
 				<ul>
-					{meats.map((meat, i) => {
+					{meats.map((meats, i) => {
 						return (
-							<li key={meat.i}>
-								The <a href={`/meats/${i}`}>{meat.name}</a> type is {meat.type}{" "}
-								
+							<li key={i}>
+								The <a href={`/meats/${i}`}>{meats.name}</a> type is {meats.type}{" "}
 							</li>
 						);
 					})}

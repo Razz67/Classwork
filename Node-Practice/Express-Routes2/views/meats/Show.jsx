@@ -1,14 +1,17 @@
 const React = require("react");
 class Show extends React.Component {
 	render() {
-		const meat = this.props.meats;
+		const {name, type} = this.props.meat;
 		return (
 			<div>
-				<h1>
-					<h1>Show Page</h1>
-					{/* can't use a if=else or for loops in jsx so we use a ternary operator */}
-					The {meat.name} is {meat.type} 
-				</h1>
+				<h1>Meats Show Page</h1>
+				<p>
+					The {name} is {type}
+				</p>
+
+				<nav>
+					<a href="/meats">Back</a>
+				</nav>
 			</div>
 		);
 	}

@@ -1,11 +1,13 @@
 // Load express
 const express = require("express");
 
+// Load oour fruits data
+const fruits = require("../models/fruits");
+
+
 // Create a special router object for our routes
 const router = express.Router();
 
-// Load oour fruits data
-const fruits = require("../models/fruits");
 
 
 // Bring in seed data
@@ -30,19 +32,16 @@ const fruits = require("../models/fruits");
 // I.N.D.U.C.E.S
 // Index, New, Delete, Update, Create, Edit, Show
 
-// Root route
-router.get("/", (req, res) => {
-	res.send(fruits);
-});
 
 // Index route
 router.get("/", (req, res) => {
-	res.send(fruits);
+	res.render("fruits/Index", { fruits: fruits });
 });
 
-// New route
+// // New route
 router.get("/new", (req, res) => {
-	res.send("<form>New Fruit</form>");
+	// res.send("<form>New Fruit</form>");
+	res.render("fruits/New");
 });
 
 // Delete route
@@ -52,36 +51,37 @@ router.delete("/:index", (req, res) => {
 	// res.redirect("/fruits");
 });
 
-// Update route
+// // Update route
 router.put("/:index", (req, res) => {
 	res.send("Update Fruit at index! (in DB)");
 });
 
 // Create route
 router.post("/", (req, res) => {
-	res.send("Creating a fruit");
-	
-	
-	// if (req.body.readyToEat === "on" || req.body.readyToEat === "true") {
-	// 	req.body.readyToEat = true;
-	// } else {
-	// 	req.body.readyToEat = false;
-	// }
-	// fruits.push(req.body);
-	// console.log(req.body);
-	// res.redirect("/fruits");  // send the user to the index page
+	// res.send("Creating a fruit");
+	if (req.body.readyToEat === "on" || req.body.readyToEat === "true") {
+		req.body.readyToEat = true;
+	} else {
+		req.body.readyToEat = false;
+	}
+	fruits.push(req.body);
+	console.log(fruits);
+	res.redirect("/fruits");  // send the user to the index page
 });
 
-// Edit route
+
+	// // Edit route
 router.get("/:index/edit", (req, res) => {
 	res.send("<form>Edit Fruit</form>");
 });
 
 // Show route
 router.get("/:index", (req, res) => {
-	res.send({fruit: fruits[req.params.index]  // look inside the views folder for Show.jsx and pass in the html
+	res.render('fruits/Show', {fruit: fruits[req.params.index]});
+	// {fruit: fruits[req.params.index] 
 	});
-});
+
+
 
 
 // Setup "index" route

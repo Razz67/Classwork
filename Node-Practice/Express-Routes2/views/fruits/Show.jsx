@@ -1,14 +1,23 @@
 const React = require('react');
+// const DefaultLayout = require('..layouts/DefaultLayout');
+
+// class component extended from the base component (react)
 class Show extends React.Component {
+    // Use react render() method to render the component
     render() {
-        const fruit = this.props.fruits;
+        // Object destructuring
+        const {name, color, readyToEat} = this.props.fruit;
         return (
             <div>
-            <h1>
-                <h1>Show Page</h1>
-                {/* can't use a if=else or for loops in jsx so we use a ternary operator */}
-                The {fruit.name} is {fruit.color} and is {fruit.readyToEat ? 'ready to eat' : 'not ready to eat'}
-            </h1>
+                <h1>Fruits Show Page</h1>
+                <p>
+                The {name} is {color} 
+                </p>
+                <p>and is {readyToEat ? 'ready to eat' : 'not ready to eat'} 
+                </p>
+                <nav>
+                <a href='/fruits'>Back</a>
+                </nav>
             </div>
         )
     }

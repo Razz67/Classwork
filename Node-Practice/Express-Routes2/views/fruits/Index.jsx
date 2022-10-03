@@ -2,18 +2,20 @@ const React = require("react");
 
 class Index extends React.Component {
 	render() {
-		const {fruits} = this.props;
+
+		// Object destructuring
+		const { fruits } = this.props;
 		return (
 			<div>
 				<h1>Fruits Index Page</h1>
 				<ul>
-					{fruits.map((fruit, i) => {
+					{fruits.map((fruits, i) => {
 						return (
-							<li key={fruit.i}>
+							<li key={i}>
 								The{" "}
                                 <a href={`/fruits/${i}`}>
-                                {fruit.name}</a>{" "} is {fruit.color} <br></br> and is{" "}
-                                {fruit.readyToEat ? "ready to eat" : "not ready to eat"}
+                                {fruits.name}</a> is {fruits.color} <br></br> and is{" "}
+                                {fruits.readyToEat ? "ready to eat" : "not ready to eat"}
                                 <br />
 							</li>
 						);
