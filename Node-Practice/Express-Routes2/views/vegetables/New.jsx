@@ -4,9 +4,9 @@ class New extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>New Fruit Page</h1>
+				<h1>New Vegetable Page</h1>
 				{/* Action is the route that the form will submit to */}
-				<form action="/meats" method="POST">
+				<form action="/vegetables" method="POST">
 					<label htmlFor="name">Name:</label>
 					<input type="text" name="name" />
 					<br />
@@ -17,7 +17,7 @@ class New extends React.Component {
 					<br />
 					<br />
 
-					<input type="submit" value="Create Fruit" />
+					<input type="submit" value="Create Veggie" />
 				</form>
 			</div>
 		);
