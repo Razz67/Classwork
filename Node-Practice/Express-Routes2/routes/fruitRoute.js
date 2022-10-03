@@ -1,14 +1,12 @@
 // Load express
 const express = require("express");
 
-// Load oour fruits data
-const fruits = require("../models/fruits");
-
-
 // Create a special router object for our routes
 const router = express.Router();
 
 
+// Load oour fruits data
+const fruits = require("../models/fruits");
 
 // Bring in seed data
 // const seed = require("../models/seed");
@@ -65,7 +63,6 @@ router.post("/", (req, res) => {
 		req.body.readyToEat = false;
 	}
 	fruits.push(req.body);
-	console.log(fruits);
 	res.redirect("/fruits");  // send the user to the index page
 });
 

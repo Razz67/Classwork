@@ -4,7 +4,7 @@ const express = require("express");
 // Create a special router object for our routes
 const router = express.Router();
 
-// Load oour vegetables data
+// Load our vegetables data
 const vegetables = require("../models/vegetables");
 
 // Bring in seed data
@@ -29,19 +29,15 @@ const vegetables = require("../models/vegetables");
 // I.N.D.U.C.E.S
 // Index, New, Delete, Update, Create, Edit, Show
 
-// Root route
-router.get("/", (req, res) => {
-	res.send(vegetables);
-});
 
 // Index route
 router.get("/", (req, res) => {
-	res.send(vegetables);
+	res.render("vegetables/Index", { vegetables: vegetables });
 });
 
 // New route
 router.get("/new", (req, res) => {
-	res.send("<form>New Vegetable</form>");
+	res.render("vegetables/New");
 });
 
 // Delete route
@@ -58,8 +54,8 @@ router.put("/:index", (req, res) => {
 
 // Create route
 router.post("/", (req, res) => {
-	res.send("Creating a vegetable");
-	// res.redirect("/vegetables");  // send the user to the index page
+	vegetables.push(req.body);
+	res.redirect("/vegetables");  // send the user to the index page
 });
 
 // Edit route
@@ -69,10 +65,8 @@ router.get("/:index/edit", (req, res) => {
 
 // Show route
 router.get("/:index", (req, res) => {
-	res.send({
-		fruit: vegetables[req.params.index], // look inside the views folder for Show.jsx and pass in the html
+	res.render("vegetables/Show", {vegetable: vegetables[req.params.index]}); // look inside the views folder for Show.jsx and pass in the html
 	});
-});
 
 // Setup "index" route
 // router.get("/", findAllVegetables);

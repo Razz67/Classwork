@@ -6,7 +6,7 @@ class Show extends React.Component {
 			<div>
 				<h1>Meats Show Page</h1>
 				<p>
-					The {name} is {type}
+					The {name} type is {type}
 				</p>
 
 				<nav>

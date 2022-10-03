@@ -6,18 +6,17 @@ class New extends React.Component {
 			<div>
 				<h1>New Meat Page</h1>
 
-				<form action="/fruits" method="POST">
+				<form action="/meats" method="POST">
                 
 					<label htmlFor="name">Name: </label>
-
 					<input type="text" name="name" />
-					<br />
+					<br /><br />
 
 					<label htmlFor="type">Type: </label>
-
 					<input type="text" name="type" />
+					<br /><br />
 					
-					<input type="submit" name="" value="Create Fruit" />
+					<input type="submit" name="" value="Create Meat" />
 				</form>
 			</div>
 		);

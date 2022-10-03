@@ -5,12 +5,12 @@ class Index extends React.Component {
 		const { vegetables } = this.props;
 		return (
 			<div>
-				<h1>Fruits Index Page</h1>
+				<h1>Vegetables Index Page</h1>
 				<ul>
-					{vegetables.map((vegetable, i) => {
+					{vegetables.map((vegetables, i) => {
 						return (
-							<li key={vegetable.i}>
-								The <a href={`/vegetables/${i}`}>{vegetable.name}</a> color is {vegetable.color}.
+							<li key={i}>
+								The <a href={`/vegetables/${i}`}>{vegetables.name}</a> color is {vegetables.color}.
 							</li>
 						);
 					})}

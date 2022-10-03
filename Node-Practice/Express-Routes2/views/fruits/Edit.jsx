@@ -19,6 +19,7 @@ class Edit extends React.Component {
 						id="color"
 						defaultValue={fruit.color}
 					/>
+					<br /><br />
 
 					<label htmlFor="readyToEat">Ready To Eat:</label>
 					<input
@@ -27,6 +28,7 @@ class Edit extends React.Component {
 						id="readyToEat"
 						defaultChecked={fruit.readyToEat}
 					/>
+					<br /><br />
 
 					<input type="submit" />
 				</form>
