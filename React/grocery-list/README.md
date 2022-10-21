@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+<h1>W1 D3 Lab: Groceries</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2>React Groceries</h2>
+<p>Build an app that let's you make a list of groceries to buy</p>
 
-## Available Scripts
+<h3>Learning Objectives</h3>
+<ul>
+<li>Practice setting up a React app</li>
+<li>Practice Mocking a React app</li>
+<li>Practice using state</li>
+<li>Practice rendering a list</li>
+<li>Practice conditional rendering</li>
+</ul>
 
-In the project directory, you can run:
+<h3>Prerequisites</h3>
+<ul>
+<li>Introduction to React static components, mocking, state, rendering</li>
+</ul>
 
-### `npm start`
+<h2>Getting Started</h2>
+<ol>
+ <li>npx create-react-app react_groceries</li>
+ <li>cd react_groceries</li>
+ <li>npm start</li>
+ </ol>
+ 
+<h2>Deliverables</h2>
+<p>Build a grocery app that allows users to make a grocery list</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h2>Technical Requirements</h2>
+<ol>
+<li>Read over these specs and draw a mockup of your app</li>
+<li>Must have grocery items in this shape</li>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<ul>
+{
+  item: '',
+  brand '',
+  units: '',
+  quantity: 0,
+  isPurchased: false
+}
+</ul>
 
-### `npm test`
+<li>Make an array of 3 objects using the above shape and render the item, quantity and units (12 pack, 1lb, 2 liters, etc.)</li>
+<li>Make inputs so that new items can be added</li>
+<li>Conditionally render the grocery items based on whether or not they were purchased (ok to have hard coded values for isPurchased)</li>
+<li>Add some style to your app</li>
+<li>Stretch Add a button that says 'remove' and when clicked the value of isPurchased is toggled</li>
+<li>Submission Guidelines</li>
+<li>Submit the Github link</li>
+</ol>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h2>Hungry for more</h2>
+<ul>
+<li>Make multiple grocery lists (one for each family member) and have them update independently</li>
+<li>sort your list alphabetically</li>
+<li>create other ways to sort your data (ie by quantity)</li>
+<li>change the 'remove' button's functionality to actually remove the item from the list</li>
+<li>add a 'later' button that toggles the css (gray text, strikeout etc.) if the item should be purchased later</li>
+<li>expand your app to allow for images (the images should be an http url ) and then render the image in your app - some images may take longer to load and not appear correctly, look into react life cycle events</li>
+</ul>
