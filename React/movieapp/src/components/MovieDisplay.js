@@ -1,23 +1,65 @@
+import { useLocation, Link } from "react-router-dom";
 
+function MovieDisplay({
+	movie,
+	addToFavorites,
+	removeFromFavorites,
+	favorites,
 
-export default function MovieDisplay({ movie }) {
+}) {
+	let location = useLocation();
 
-    const  loaded = () => {
-    return (
-    <>
-        <h1>{movie.Title}</h1>
-        <h2>{movie.Genre}</h2>
-        <img src={movie.Poster} alt={movie.Title} />
-        <h2>{movie.Year}</h2>
-    </>
-    )
+	const alreadyFavorited = () => {
+	    let check = favorites?.find((m) => m.imdbID === movie.imdbID)
+	    if (check) {
+	        return true
+	    } else {
+	        return false
+	    }
+	}
+
+	const loaded = () => {
+		if (location.pathname === "/favorites") {
+			return (
+				<div>
+					<Link to={`/favorites/${movie.imdbID}`}>
+						<img src={movie.Poster} alt={movie.Title} />
+					</Link>
+					<br />
+					<button onClick={() => removeFromFavorites(movie)}>
+						Remove from Favorites
+					</button>
+				</div>
+			);
+		} else {
+			return (
+				<div>
+					<h1>
+						{movie.Title} ({movie.Year})</h1>
+					<h2>{movie.Genre}</h2>
+					<img src={movie.Poster} alt={movie.Title} />
+					<br />
+					{
+						alreadyFavorited() ? "favorited" : 
+
+						<button onClick={() => addToFavorites(movie)}>
+							Add to Favorites
+						</button>
+					}
+					<br />
+					<br />
+				</div>
+			);
+		}
+	};
+
+	//   console.log(favorites.find((m) => m.imdbID === "tt0112697"))
+
+	const loading = () => {
+		return <div>No movie data to display... :(</div>;
+	};
+
+	return movie ? loaded() : loading();
 }
 
-const loading = () => {
-    return <h1>Loading...</h1>
-};
-
-return movie ? loaded() : loading();
-}
-
-// https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+export default MovieDisplay;
